@@ -1,0 +1,2 @@
+inherits = "sonokai"
+"ui.window" = { fg = "bg3" }
