@@ -1,0 +1,13 @@
+theme = "sonokai"
+
+[editor]
+cursorline = true
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.indent-guides]
+render = true
+
+[keys.normal.space]
+"." = "file_picker_in_current_buffer_directory"

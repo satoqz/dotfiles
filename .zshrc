@@ -1,0 +1,44 @@
+bindkey -v
+
+setopt share_history extended_history \
+    hist_ignore_space hist_ignore_dups hist_ignore_all_dups \
+    hist_save_no_dups hist_expire_dups_first 
+
+HISTSIZE=10000
+SAVEHIST=10000
+
+zstyle ":completion:" rehash true
+zstyle ':completion:*:default' menu select=1
+
+fpath+=(/opt/homebrew/share/zsh/site-functions)
+autoload -Uz compinit && compinit
+
+has_bin() {
+    command -v "$1" > /dev/null
+}
+
+alias dots="git --work-tree ~ --git-dir ~/src/dotfiles"
+has_bin eza && alias ls="eza --icons -a"
+has_bin kubectl && alias k="kubectl"
+has_bin kubecolor && alias kubectl="kubecolor" && compdef kubecolor=kubectl
+
+precmd() {
+    PS1="%(?.%F{green}.%F{red})➜ %f"
+    [[ -n "$SSH_CONNECTION" ]] && PS1+="%F{green}%m %f" 
+    PS1+="%F{cyan}%~ %f"
+    branch="$(has_bin git && git branch --show-current 2>/dev/null)"
+    [[ -n "$branch" ]] && PS1+="%F{magenta} $branch%f "
+}
+
+precmd
+
+has_bin fzf && source <(fzf --zsh)
+
+source_opt() {
+    [[ -f "$1" ]] && source "$1"
+}
+
+source_opt /opt/homebrew/share/zsh-autopair/autopair.zsh
+source_opt /opt/homebrew/share/zsh-system-clipboard/zsh-system-clipboard.zsh
+source_opt /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source_opt /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
