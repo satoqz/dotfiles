@@ -16,7 +16,6 @@ brew "cmake"
 brew "uv"
 brew "ruff"
 brew "pyright"
-brew "oven-sh/bun/bun"
 
 brew "oven-sh/bun/bun"
 brew "deno"
