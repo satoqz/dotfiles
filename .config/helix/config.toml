@@ -1,6 +1,7 @@
 theme = "sonokai"
 
 [editor]
+color-modes = true
 cursorline = true
 
 [editor.cursor-shape]
