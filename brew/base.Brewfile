@@ -6,6 +6,7 @@ brew "fzf"
 brew "ripgrep"
 brew "sd"
 
+brew "dotter"
 brew "eza"
 brew "htop"
 brew "tldr"
