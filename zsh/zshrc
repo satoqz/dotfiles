@@ -17,7 +17,6 @@ has_bin() {
     command -v "$1" > /dev/null
 }
 
-alias dots="git --work-tree ~ --git-dir ~/src/dotfiles"
 has_bin eza && alias ls="eza --icons -a"
 has_bin kubectl && alias k="kubectl"
 has_bin kubecolor && alias kubectl="kubecolor" && compdef kubecolor=kubectl

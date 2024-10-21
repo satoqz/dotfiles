@@ -1,0 +1,13 @@
+[shell.files]
+"extra/hushlogin" = "~/.hushlogin"
+"git/ignore" = "~/.config/git/ignore"
+"helix/config.toml" = "~/.config/helix/config.toml"
+"helix/languages.toml" = "~/.config/helix/languages.toml"
+"helix/sonokai.toml" = "~/.config/helix/themes/sonokai.toml"
+"tmux/tmux.conf" = "~/.config/tmux/tmux.conf"
+"zsh/zprofile" = "~/.zprofile"
+"zsh/zshenv" = "~/.zshenv"
+"zsh/zshrc" = "~/.zshrc"
+
+[gui.files]
+"ghostty/config" = "~/.config/ghostty/config"
