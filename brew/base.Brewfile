@@ -1,5 +1,6 @@
 brew "helix"
 brew "tmux"
+brew "tmux-sessionizer"
 
 brew "fd"
 brew "fzf"
