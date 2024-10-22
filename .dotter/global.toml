@@ -5,6 +5,7 @@
 "helix/languages.toml" = "~/.config/helix/languages.toml"
 "helix/sonokai.toml" = "~/.config/helix/themes/sonokai.toml"
 "tmux/tmux.conf" = "~/.config/tmux/tmux.conf"
+"tmux/tms.toml" = "~/.config/tms/config.toml"
 "zsh/zprofile" = "~/.zprofile"
 "zsh/zshenv" = "~/.zshenv"
 "zsh/zshrc" = "~/.zshrc"
