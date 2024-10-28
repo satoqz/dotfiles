@@ -25,6 +25,7 @@ copy-on-select = true
 
 macos-titlebar-style = native
 macos-option-as-alt = true
+macos-titlebar-proxy-icon = hidden
 
 background = 2c2e35
 foreground = e2e2e3
