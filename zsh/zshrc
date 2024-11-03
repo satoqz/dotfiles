@@ -41,3 +41,5 @@ source_opt /opt/homebrew/share/zsh-autopair/autopair.zsh
 source_opt /opt/homebrew/share/zsh-system-clipboard/zsh-system-clipboard.zsh
 source_opt /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source_opt /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+[[ -z "$TMUX" ]] && tmux new-session -A -s default || true
