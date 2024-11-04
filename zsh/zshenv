@@ -1,4 +1,4 @@
-export EDITOR="hx"
+export EDITOR="vim"
 export GOPATH="$HOME/.go"
 
 [[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"

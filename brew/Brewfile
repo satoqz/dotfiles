@@ -1,4 +1,6 @@
-brew "helix"
+cask "firefox"
+cask "visual-studio-code"
+
 brew "tmux"
 brew "tmux-sessionizer"
 

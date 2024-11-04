@@ -1,51 +1,22 @@
+theme = Dark+
+bold-is-bright = true
+
 font-family = GeistMono NFM
-font-size = 16
+font-size = 15
 font-thicken = true
 font-feature = -liga
-font-style-bold = false
-font-style-italic = false
-font-style-bold-italic = false
-
-adjust-cell-width = -6%
-adjust-cursor-thickness = 120%
 
 cursor-style-blink = false
 shell-integration-features = no-cursor
 
 window-width = 10000
 window-height = 10000
-window-padding-x = 6
-window-padding-y = 6
+window-padding-x = 8
+window-padding-y = 8
 
 confirm-close-surface = false
-
 unfocused-split-opacity = 1
 
-copy-on-select = true
-
 macos-titlebar-style = native
-macos-option-as-alt = true
 macos-titlebar-proxy-icon = hidden
-
-background = 2c2e35
-foreground = e2e2e3
-
-selection-background = 414550
-selection-foreground = e2e2e3
-
-palette = 0=181819
-palette = 1=fc5d7c
-palette = 2=9ed072
-palette = 3=e7c664
-palette = 4=76cce0
-palette = 5=b39df3
-palette = 6=76cce0
-palette = 7=e2e2e3
-palette = 8=7f8490
-palette = 9=fc5d7c
-palette = 10=9ed072
-palette = 11=e7c664
-palette = 12=76cce0
-palette = 13=b39df3
-palette = 14=76cce0
-palette = 15=e2e2e3
+macos-option-as-alt = true
