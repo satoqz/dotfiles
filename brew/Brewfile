@@ -1,5 +1,6 @@
 cask "firefox"
 cask "visual-studio-code"
+cask "font-geist-mono-nerd-font"
 
 brew "eza"
 brew "fd"
