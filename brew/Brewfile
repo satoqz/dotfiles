@@ -1,22 +1,17 @@
 cask "firefox"
 cask "visual-studio-code"
 
-brew "tmux"
-brew "tmux-sessionizer"
-
+brew "eza"
 brew "fd"
 brew "fzf"
-brew "ripgrep"
-brew "sd"
-
-brew "dotter"
-brew "eza"
 brew "htop"
-brew "tldr"
+brew "ripgrep"
+brew "tmux"
 brew "watch"
 
+brew "dotter"
 brew "gh"
-brew "gitui"
+brew "tldr"
 
 brew "zsh-autopair"
 brew "zsh-autosuggestions"

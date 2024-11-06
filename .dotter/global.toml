@@ -3,7 +3,6 @@
 "ghostty/config" = "~/.config/ghostty/config"
 "git/ignore" = "~/.config/git/ignore"
 "tmux/tmux.conf" = "~/.config/tmux/tmux.conf"
-"tmux/tms.toml" = "~/.config/tms/config.toml"
 "vim/vimrc" = "~/.vimrc"
 "zsh/zprofile" = "~/.zprofile"
 "zsh/zshenv" = "~/.zshenv"
