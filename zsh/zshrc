@@ -13,31 +13,31 @@ zstyle ':completion:*:default' menu select=1
 fpath+=(/opt/homebrew/share/zsh/site-functions)
 autoload -Uz compinit && compinit
 
-has_bin() {
-    command -v "$1" > /dev/null
-}
+has_bin() command -v "$1" > /dev/null
 
 has_bin eza && alias ls="eza --icons -a"
 has_bin kubectl && alias k="kubectl"
 has_bin kubecolor && alias kubectl="kubecolor" && compdef kubecolor=kubectl
 
-precmd() {
-    PS1="%(?.%F{green}.%F{red})➜ %f"
-    [[ -n "$SSH_CONNECTION" ]] && PS1+="%F{green}%m %f" 
-    PS1+="%F{cyan}%~ %f"
+# 200 IQ https://stackoverflow.com/questions/20512957/zsh-new-line-prompt-after-each-command
+precmd_newline() precmd_newline() echo
+precmd_prompt() {
+    PROMPT=""
+    [[ -n "$SSH_CONNECTION" ]] && PROMPT+="%F{green}%m %f" 
+    PROMPT+="%F{cyan}%~ %f"
     branch="$(has_bin git && git branch --show-current 2>/dev/null)"
-    [[ -n "$branch" ]] && PS1+="%F{magenta} $branch%f "
+    [[ -n "$branch" ]] && PROMPT+="%F{magenta} $branch%f" 
+    newline=$'\n' && PROMPT+="$newline%(?.%F{green}.%F{red})➜ %f"
+    unset newline branch
 }
 
-precmd
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd precmd_newline
+add-zsh-hook precmd precmd_prompt
 
-has_bin fzf && source <(fzf --zsh)
-
-source_opt() {
-    [[ -f "$1" ]] && source "$1"
-}
-
+source_opt() { [[ -f "$1" ]] && source "$1"; }
 source_opt /opt/homebrew/share/zsh-autopair/autopair.zsh
 source_opt /opt/homebrew/share/zsh-system-clipboard/zsh-system-clipboard.zsh
 source_opt /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source_opt /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+has_bin fzf && source <(fzf --zsh)
