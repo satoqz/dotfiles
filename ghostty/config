@@ -9,8 +9,9 @@ font-feature = -liga
 cursor-style-blink = false
 shell-integration-features = no-cursor
 
-window-width = 10000
-window-height = 10000
+window-save-state = always
+window-width = 180
+window-height = 55
 window-padding-x = 8
 window-padding-y = 8
 
