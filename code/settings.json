@@ -59,9 +59,7 @@
   "workbench.activityBar.location": "hidden",
   "workbench.colorCustomizations": {
     "[Default Dark+]": {
-      "editor.background": "#1e1e1e",
       "editorGroupHeader.tabsBackground": "#1e1e1e",
-      "sideBar.background": "#252526",
       "statusBar.background": "#252526",
       "statusBar.border": "#2b2b2b",
       "statusBar.debuggingBackground": "#252526",
