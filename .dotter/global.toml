@@ -1,9 +1,12 @@
 [shell.files]
-"extra/hushlogin" = "~/.hushlogin"
-"ghostty/config" = "~/.config/ghostty/config"
 "git/ignore" = "~/.config/git/ignore"
 "tmux/tmux.conf" = "~/.config/tmux/tmux.conf"
 "vim/vimrc" = "~/.vimrc"
 "zsh/zprofile" = "~/.zprofile"
 "zsh/zshenv" = "~/.zshenv"
 "zsh/zshrc" = "~/.zshrc"
+
+[mac.files]
+"code/settings.json" = "~/Library/Application Support/Code/User/settings.json"
+"extra/hushlogin" = "~/.hushlogin"
+"ghostty/config" = "~/.config/ghostty/config"
