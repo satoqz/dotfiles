@@ -40,4 +40,6 @@ source_opt /opt/homebrew/share/zsh-autopair/autopair.zsh
 source_opt /opt/homebrew/share/zsh-system-clipboard/zsh-system-clipboard.zsh
 source_opt /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source_opt /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 has_bin fzf && source <(fzf --zsh)
+has_bin direnv && eval "$(direnv hook zsh)"
