@@ -12,7 +12,6 @@
   "editor.formatOnSave": true,
   "editor.guides.highlightActiveIndentation": false,
   "editor.guides.indentation": false,
-  "editor.inlayHints.fontSize": 14,
   "editor.lightbulb.enabled": "off",
   "editor.linkedEditing": true,
   "editor.minimap.enabled": false,
@@ -53,22 +52,6 @@
   "window.commandCenter": false,
   "window.newWindowDimensions": "inherit",
   "window.title": "${rootName}",
-  "workbench.activityBar.location": "hidden",
-  "workbench.colorCustomizations": {
-    "[Default Dark+]": {
-      "editorGroupHeader.tabsBackground": "#1e1e1e",
-      "statusBar.background": "#252526",
-      "statusBar.border": "#2b2b2b",
-      "statusBar.debuggingBackground": "#252526",
-      "statusBar.foreground": "#cccccc",
-      "statusBar.noFolderBackground": "#252526",
-      "statusBarItem.remoteBackground": "#252526",
-      "statusBarItem.remoteForeground": "#cccccc",
-      "tab.border": "#1e1e1e",
-      "tab.inactiveBackground": "#1e1e1e",
-      "titleBar.activeBackground": "#252526"
-    }
-  },
   "workbench.colorTheme": "Default Dark+",
   "workbench.layoutControl.enabled": false,
   "workbench.list.smoothScrolling": true,
