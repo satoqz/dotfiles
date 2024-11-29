@@ -27,7 +27,7 @@ precmd_prompt() {
     PROMPT+="%F{cyan}%~ %f"
     branch="$(has_bin git && git branch --show-current 2>/dev/null)"
     [[ -n "$branch" ]] && PROMPT+="%F{magenta} $branch%f" 
-    newline=$'\n' && PROMPT+="$newline%(?.%F{green}.%F{red})➜ %f"
+    newline=$'\n' && PROMPT+="$newline%F{green}➜ %f"
     unset newline branch
 }
 
