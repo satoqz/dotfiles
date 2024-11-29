@@ -1,6 +1,5 @@
 [shell.files]
 "git/ignore" = "~/.config/git/ignore"
-"tmux/tms.toml" = "~/.config/tms/config.toml"
 "tmux/tmux.conf" = "~/.config/tmux/tmux.conf"
 "vim/vimrc" = "~/.vimrc"
 "zsh/zprofile" = "~/.zprofile"
