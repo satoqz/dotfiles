@@ -31,8 +31,6 @@
   "git.openRepositoryInParentFolders": "always",
   "telemetry.telemetryLevel": "off",
   "terminal.external.osxExec": "Ghostty.app",
-  "terminal.integrated.confirmOnExit": "never",
-  "terminal.integrated.confirmOnKill": "never",
   "terminal.integrated.env.osx": {
     "EDITOR": "code --wait"
   },
@@ -41,6 +39,7 @@
   "terminal.integrated.macOptionIsMeta": true,
   "terminal.integrated.scrollback": 100000,
   "terminal.integrated.shellIntegration.decorationsEnabled": "never",
+  "terminal.integrated.showExitAlert": false,
   "terminal.integrated.smoothScrolling": true,
   "vim.surround": true,
   "vim.useSystemClipboard": true,
