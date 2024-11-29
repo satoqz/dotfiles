@@ -13,7 +13,7 @@ zstyle ':completion:*:default' menu select=1
 fpath+=(/opt/homebrew/share/zsh/site-functions)
 autoload -Uz compinit && compinit
 
-has_bin() command -v "$1" > /dev/null
+has_bin() { command -v "$1" > /dev/null; }
 
 has_bin eza && alias ls="eza --icons -a"
 has_bin kubectl && alias k="kubectl"
