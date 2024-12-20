@@ -1,11 +1,15 @@
 bindkey -v
 
-setopt share_history extended_history \
-    hist_ignore_space hist_ignore_dups hist_ignore_all_dups \
-    hist_save_no_dups hist_expire_dups_first 
+PROMPT="%F{green}➜ %f"
+[[ -n "$SSH_CONNECTION" ]] && PROMPT+="%F{green}%m %f" 
+PROMPT+="%F{cyan}%~ %f"
 
 HISTSIZE=10000
 SAVEHIST=10000
+
+setopt extended_history \
+    hist_ignore_space hist_ignore_dups hist_ignore_all_dups \
+    hist_save_no_dups hist_expire_dups_first 
 
 zstyle ":completion:" rehash true
 zstyle ':completion:*:default' menu select=1
@@ -13,33 +17,19 @@ zstyle ':completion:*:default' menu select=1
 fpath+=(/opt/homebrew/share/zsh/site-functions)
 autoload -Uz compinit && compinit
 
-has_bin() { command -v "$1" > /dev/null; }
+maybe_source() { [[ -f "$1" ]] && source "$1"; }
+if_installed() { command -v "$1" > /dev/null; }
 
-has_bin eza && alias ls="eza --icons -a"
-has_bin kubectl && alias k="kubectl"
-has_bin kubecolor && alias kubectl="kubecolor" && compdef kubecolor=kubectl
+if_installed eza && alias ls="eza --icons -a"
+if_installed kubectl && alias k="kubectl"
+if_installed kubecolor && alias kubectl="kubecolor" && compdef kubecolor=kubectl
 
-# 200 IQ https://stackoverflow.com/questions/20512957/zsh-new-line-prompt-after-each-command
-precmd_newline() precmd_newline() echo
-precmd_prompt() {
-    PROMPT=""
-    [[ -n "$SSH_CONNECTION" ]] && PROMPT+="%F{green}%m %f" 
-    PROMPT+="%F{cyan}%~ %f"
-    branch="$(has_bin git && git branch --show-current 2>/dev/null)"
-    [[ -n "$branch" ]] && PROMPT+="%F{magenta} $branch%f" 
-    newline=$'\n' && PROMPT+="$newline%F{green}➜ %f"
-    unset newline branch
-}
+maybe_source /opt/homebrew/share/zsh-autopair/autopair.zsh
+maybe_source /opt/homebrew/share/zsh-system-clipboard/zsh-system-clipboard.zsh
+maybe_source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+maybe_source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-autoload -Uz add-zsh-hook
-add-zsh-hook precmd precmd_newline
-add-zsh-hook precmd precmd_prompt
+if_installed fzf && source <(fzf --zsh)
+if_installed direnv && eval "$(direnv hook zsh)"
 
-source_opt() { [[ -f "$1" ]] && source "$1"; }
-source_opt /opt/homebrew/share/zsh-autopair/autopair.zsh
-source_opt /opt/homebrew/share/zsh-system-clipboard/zsh-system-clipboard.zsh
-source_opt /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source_opt /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-has_bin fzf && source <(fzf --zsh)
-has_bin direnv && eval "$(direnv hook zsh)"
+unset maybe_source if_installed

@@ -1,3 +1,8 @@
-test -z "$EDITOR" && export EDITOR="vim"
-test -z "$GOPATH" && export GOPATH="$HOME/.go"
-test -f "$HOME/.cargo/env" && . "$HOME/.cargo/env"
+maybe_source() { [[ -f "$1" ]] && source "$1"; }
+export_once() { [[ -z "$1" ]] && export "$1"="$2" }
+
+export_once EDITOR vim
+export_once GOPATH ~/.go
+maybe_source ~/.cargo/env
+
+unset maybe_source export_once
