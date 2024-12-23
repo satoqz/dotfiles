@@ -1,8 +1,5 @@
-bindkey -v
 
-PROMPT="%F{green}➜ %f"
-[[ -n "$SSH_CONNECTION" ]] && PROMPT+="%F{green}%m %f" 
-PROMPT+="%F{cyan}%~ %f"
+bindkey -v
 
 HISTSIZE=10000
 SAVEHIST=10000
@@ -33,3 +30,29 @@ if_installed fzf && source <(fzf --zsh)
 if_installed direnv && eval "$(direnv hook zsh)"
 
 unset maybe_source if_installed
+
+precmd() {
+    PROMPT="%(?.%F{green}.%F{red})➜ "
+    [[ -n "$SSH_CONNECTION" ]] && PROMPT+="%F{green}%m " 
+    PROMPT+="%F{cyan}"
+
+    _repo_path="$(command -v git &> /dev/null \
+        && git rev-parse --show-toplevel 2> /dev/null)"
+
+    if [[ -n "$_repo_path" ]]; then
+        PROMPT+="$(basename "$_repo_path")"
+        [[ "$(pwd)" != "$_repo_path" ]] && PROMPT+="/${"$(pwd)"#$_repo_path/}"
+
+        [[ -n "$(git status --porcelain)" ]] && _dirty="%F{yellow}×"
+        _branch="%F{red}$(git branch --show-current)"
+        PROMPT+=" %F{magenta}git:($_branch$_dirty%F{magenta}) "
+
+        unset _repo_path _dirty _branch
+    else
+        PROMPT+="%~ "
+    fi
+
+    PROMPT+="%f"
+}
+
+precmd
