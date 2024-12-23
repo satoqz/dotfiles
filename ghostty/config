@@ -1,20 +1,30 @@
-theme = Dark+
+theme = tokyonight-storm
 bold-is-bright = true
 
 font-family = GeistMono NFM
-font-size = 16
-font-thicken = true
 font-feature = -liga
+font-thicken = true
+font-size = 20
 adjust-cell-width = -1
+
+font-style-bold = false
+font-style-italic = false
+font-style-bold-italic = false
 
 cursor-style-blink = false
 shell-integration-features = no-cursor
 
+copy-on-select = true
+mouse-hide-while-typing = true
+
 window-save-state = always
-window-width = 180
-window-height = 55
-window-padding-x = 8
-window-padding-y = 8
+
+window-width = 1000
+window-height = 1000
+
+window-padding-color = extend
+window-padding-x = 4
+window-padding-y = 4
 
 confirm-close-surface = false
 unfocused-split-opacity = 1

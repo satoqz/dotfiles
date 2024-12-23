@@ -1,0 +1,13 @@
+theme = "tokyonight_storm"
+
+[editor]
+color-modes = true
+
+[editor.file-picker]
+hidden = false
+
+[editor.lsp]
+display-inlay-hints = true
+
+[editor.smart-tab]
+enable = false

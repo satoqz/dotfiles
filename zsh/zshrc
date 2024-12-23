@@ -12,7 +12,7 @@ setopt extended_history \
     hist_save_no_dups hist_expire_dups_first 
 
 zstyle ":completion:" rehash true
-zstyle ':completion:*:default' menu select=1
+zstyle ":completion:*:default" menu select=1
 
 fpath+=(/opt/homebrew/share/zsh/site-functions)
 autoload -Uz compinit && compinit
