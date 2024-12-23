@@ -1,5 +1,4 @@
-theme = tokyonight-storm
-bold-is-bright = true
+theme = tokyonight
 
 font-family = GeistMono NFM
 font-feature = -liga
