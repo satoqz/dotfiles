@@ -11,3 +11,6 @@ display-inlay-hints = true
 
 [editor.smart-tab]
 enable = false
+
+[keys.normal.space]
+"." = "file_picker_in_current_buffer_directory"
