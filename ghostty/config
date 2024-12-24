@@ -3,8 +3,8 @@ theme = tokyonight
 font-family = GeistMono NFM
 font-feature = -liga
 font-thicken = true
-font-size = 18
 adjust-cell-width = -1
+font-size = 16
 
 font-style-bold = false
 font-style-italic = false
@@ -17,9 +17,6 @@ copy-on-select = true
 mouse-hide-while-typing = true
 
 window-save-state = always
-
-window-width = 1000
-window-height = 1000
 
 window-padding-color = extend
 window-padding-x = 6

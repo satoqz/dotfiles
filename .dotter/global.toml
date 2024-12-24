@@ -1,15 +1,12 @@
 [core.files]
-"ghostty/config" = "~/.config/ghostty/config"
-"git/ignore" = "~/.config/git/ignore"
-"tmux/tmux.conf" = "~/.config/tmux/tmux.conf"
-"helix/config.toml" = "~/.config/helix/config.toml"
-"vim/vimrc" = "~/.vimrc"
+ghostty = "~/.config/ghostty"
+git = "~/.config/git"
+nvim = "~/.config/nvim"
+tmux = "~/.config/tmux"
+tmux-sessionizer = "~/.config/tms"
 "zsh/zprofile" = "~/.zprofile"
 "zsh/zshrc" = "~/.zshrc"
 
 [darwin.files]
 "extra/hushlogin" = "~/.hushlogin"
-"lazygit/config.yml" = "~/Library/Application Support/lazygit/config.yml"
 
-[linux.files]
-"lazygit/config.yml" = "~/.config/lazygit/config.yml"

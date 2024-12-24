@@ -1,7 +1,13 @@
 #!/usr/bin/env zsh
 
-export EDITOR="hx"
+if_installed() { command -v "$1" > /dev/null; }
+
+if_installed vim && export EDITOR="vim"
+if_installed nvim && export EDITOR="nvim"
+
 export GOPATH="$HOME/.go"
+
+unset if_installed
 
 # https://github.com/folke/tokyonight.nvim/blob/main/extras/fzf/tokyonight_night.sh
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
