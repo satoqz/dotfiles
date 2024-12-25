@@ -43,17 +43,20 @@ end)
 
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
+vim.keymap.set("n", "<leader>w", "<cmd>w<CR>")
+vim.keymap.set("n", "<leader>q", "<cmd>q<CR>")
+vim.keymap.set("n", "<leader>x", "<cmd>bdel!<CR>")
+
 vim.keymap.set("n", "<Tab>", "<cmd>bnext<CR>")
 vim.keymap.set("n", "<S-Tab>", "<cmd>bprev<CR>")
-vim.keymap.set("n", "<leader>w", "<cmd>bdel!<CR>")
 
-local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not vim.uv.fs_stat(lazypath) then
-  vim.fn.system {
+  vim.fn.system({
     "git", "clone", "--filter=blob:none", "--branch=stable",
     "https://github.com/folke/lazy.nvim.git", lazypath,
-  }
+  })
 end
 
 vim.opt.rtp:prepend(lazypath)
@@ -65,7 +68,8 @@ require("lazy").setup({
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme "gruvbox-material"
+      vim.g.gruvbox_material_transparent_background = 1
+      vim.cmd.colorscheme("gruvbox-material")
     end,
   },
   {
@@ -95,33 +99,63 @@ require("lazy").setup({
     branch = "0.1.x",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
-      local actions = require "telescope.actions"
+      local actions = require("telescope.actions")
 
-      require("telescope").setup {
+      require("telescope").setup({
         defaults = {
           sorting_strategy = "ascending",
-          layout_config = {
-            horizontal = { prompt_position = "top" },
-          },
-          mappings = {
-            i = { ["<esc>"] = actions.close },
-          },
+          layout_config = { horizontal = { prompt_position = "top" } },
+          mappings = { i = { ["<esc>"] = actions.close } },
         },
-      }
+      })
 
-      local builtin = require "telescope.builtin"
-      local utils = require "telescope.utils"
+      local builtin = require("telescope.builtin")
+      local utils = require("telescope.utils")
 
-      vim.keymap.set("n", "<leader>/", builtin.live_grep)
+      vim.keymap.set("n", "<leader>/", function()
+        builtin.grep_string({ search = vim.fn.input("grep: ") })
+      end)
+
       vim.keymap.set("n", "<leader>b", builtin.buffers)
 
-      vim.keymap.set("n", "<leader>f", builtin.find_files)
-      vim.keymap.set("n", "<leader>F", function() builtin.find_files { cwd = utils.buffer_dir() } end)
+      vim.keymap.set("n", "<leader>f", builtin.git_files)
+      vim.keymap.set("n", "<leader>F", builtin.find_files)
+
+      vim.keymap.set("n", "<leader>.", function()
+        builtin.find_files { cwd = utils.buffer_dir() }
+      end)
     end,
   },
   {
     "tpope/vim-fugitive",
     dependencies = { "tpope/vim-rhubarb" },
+    config = function()
+      vim.keymap.set("n", "<leader>g", "<cmd>vertical Git<CR>")
+    end,
+  },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = { "nvim-lua/plenary.nvim", "MunifTanjim/nui.nvim" },
+    config = function()
+      require("neo-tree").setup({
+        close_if_last_window = true,
+        enable_git_status = false,
+        enable_diagnostics = false,
+        filesystem = {
+          filtered_items = {
+            hide_dotfiles = false,
+            hide_gitignored = false,
+          },
+          follow_current_file = {
+            enabled = true,
+            leave_dirs_open = true,
+          },
+        },
+      })
+
+      vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<CR>")
+    end,
   },
 }, {
   install = {
