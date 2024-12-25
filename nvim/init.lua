@@ -23,12 +23,18 @@ vim.opt.ignorecase = true
 
 vim.opt.autoindent = true
 
-vim.opt.autoread = true
 vim.opt.undofile = true
 vim.opt.swapfile = false
 
 vim.opt.splitright = true
 vim.opt.splitbelow = true
+
+vim.opt.autoread = true
+
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, {
+  pattern = "*",
+  callback = function() vim.cmd("checktime") end,
+})
 
 vim.schedule(function()
   vim.opt.clipboard = "unnamedplus"
