@@ -16,7 +16,7 @@ return {
           local opts = { buffer = vim.api.nvim_get_current_buf() }
           vim.keymap.set("n", "<leader>p", "<cmd>Git push<CR>", opts)
           vim.keymap.set("n", "<leader>t", "<cmd>Git push -u origin ", opts)
-          vim.keymap.set("n", "<leader>P", "<cmd>Git pull --rebase=always<CR>", opts)
+          vim.keymap.set("n", "<leader>P", "<cmd>Git pull --rebase<CR>", opts)
         end,
       })
     end,
