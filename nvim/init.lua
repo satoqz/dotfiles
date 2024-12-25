@@ -24,6 +24,9 @@ vim.opt.ignorecase = true
 
 vim.opt.autoindent = true
 
+vim.opt.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+
 vim.opt.undofile = true
 vim.opt.swapfile = false
 
@@ -92,6 +95,14 @@ require("lazy").setup({
     build = ":TSUpdate",
     main = "nvim-treesitter.configs",
     opts = { auto_install = true },
+  },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    opts = {
+      indent =  { char = "▏" },
+      scope = { enabled = false },
+    },
   },
   {
     "nvim-telescope/telescope.nvim",
