@@ -31,16 +31,18 @@ vim.opt.splitbelow = true
 
 vim.opt.autoread = true
 
+vim.diagnostic.config({ signs = false })
+
+vim.schedule(function()
+  vim.opt.clipboard = "unnamedplus"
+end)
+
 vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, {
   pattern = "*",
   callback = function()
     vim.cmd("checktime")
   end,
 })
-
-vim.schedule(function()
-  vim.opt.clipboard = "unnamedplus"
-end)
 
 local git_commit_group = vim.api.nvim_create_augroup("GitCommitGroup", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {

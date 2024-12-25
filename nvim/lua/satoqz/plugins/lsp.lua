@@ -64,8 +64,6 @@ return {
       vim.keymap.set("n", "gr", vim.lsp.buf.references)
       vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename)
       vim.keymap.set({ "n", "x" }, "<leader>a", vim.lsp.buf.code_action)
-
-      vim.diagnostic.config({ signs = false })
     end,
   },
 
