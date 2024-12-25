@@ -88,10 +88,28 @@ require("lazy").setup({
     branch = "0.1.x",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
+      local actions = require "telescope.actions"
+
+      require("telescope").setup {
+        defaults = {
+          sorting_strategy = "ascending",
+          layout_config = {
+            horizontal = { prompt_position = "top" },
+          },
+          mappings = {
+            i = { ["<esc>"] = actions.close },
+          },
+        },
+      }
+
       local builtin = require "telescope.builtin"
-      vim.keymap.set("n", "<leader>b", builtin.buffers)
-      vim.keymap.set("n", "<leader>f", builtin.find_files)
+      local utils = require "telescope.utils"
+
       vim.keymap.set("n", "<leader>/", builtin.live_grep)
+      vim.keymap.set("n", "<leader>b", builtin.buffers)
+
+      vim.keymap.set("n", "<leader>f", builtin.find_files)
+      vim.keymap.set("n", "<leader>F", function() builtin.find_files { cwd = utils.buffer_dir() } end)
     end,
   },
   {
