@@ -25,7 +25,7 @@ vim.opt.ignorecase = true
 vim.opt.autoindent = true
 
 vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 vim.opt.undofile = true
 vim.opt.swapfile = false
@@ -37,7 +37,9 @@ vim.opt.autoread = true
 
 vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, {
   pattern = "*",
-  callback = function() vim.cmd("checktime") end,
+  callback = function()
+    vim.cmd("checktime")
+  end,
 })
 
 vim.schedule(function()
@@ -46,19 +48,16 @@ end)
 
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
-vim.keymap.set("n", "<leader>w", "<cmd>w<CR>")
-vim.keymap.set("n", "<leader>q", "<cmd>q<CR>")
-vim.keymap.set("n", "<leader>x", "<cmd>bdel!<CR>")
-
-vim.keymap.set("n", "<Tab>", "<cmd>bnext<CR>")
-vim.keymap.set("n", "<S-Tab>", "<cmd>bprev<CR>")
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not vim.uv.fs_stat(lazypath) then
   vim.fn.system({
-    "git", "clone", "--filter=blob:none", "--branch=stable",
-    "https://github.com/folke/lazy.nvim.git", lazypath,
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "--branch=stable",
+    "https://github.com/folke/lazy.nvim.git",
+    lazypath,
   })
 end
 
@@ -84,25 +83,85 @@ require("lazy").setup({
     end,
   },
   {
+    "saghen/blink.cmp",
+    version = "*",
+    opts = {
+      appearance = { use_nvim_cmp_as_default = true },
+      signature = { enabled = true },
+      sources = { default = { "lsp", "path" } },
+    },
+  },
+  {
     "neovim/nvim-lspconfig",
-    dependencies = { "j-hui/fidget.nvim" },
+    dependencies = {
+      {
+        "j-hui/fidget.nvim",
+        opts = {
+          notification = { window = { winblend = 0 } },
+        },
+      },
+      "saghen/blink.cmp",
+    },
     config = function()
-      -- TODO
-    end
+      local lspconfig = require("lspconfig")
+      local blink = require("blink.cmp")
+
+      local servers = {
+        rust_analyzer = {},
+        gopls = {},
+        terraformls = {},
+      }
+
+      for server, config in pairs(servers) do
+        config.capabilities = blink.get_lsp_capabilities(config.capabilities)
+        lspconfig[server].setup(config)
+      end
+
+      vim.api.nvim_create_autocmd("LspAttach", {
+        group = vim.api.nvim_create_augroup("init.lua-lsp-attach", { clear = true }),
+        callback = function(event)
+          local map = function(keys, func, mode)
+            vim.keymap.set(mode or "n", keys, func, { buffer = event.buf })
+          end
+
+          local builtin = require("telescope.builtin")
+
+          map("gd", builtin.lsp_definitions)
+          map("gD", vim.lsp.buf.declaration)
+          map("gt", builtin.lsp_type_definitions)
+          map("gi", builtin.lsp_implementations)
+          map("<leader>a", vim.lsp.buf.code_action, { "n", "x" })
+          map("<leader>d", builtin.diagnostics)
+          map("<leader>r", vim.lsp.buf.rename)
+          map("<leader>s", builtin.lsp_document_symbols)
+          map("<leader>S", builtin.lsp_workspace_symbols)
+        end,
+      })
+    end,
+  },
+  {
+    "stevearc/conform.nvim",
+    config = function()
+      local conform = require("conform")
+
+      conform.setup({
+        default_format_opts = { lsp_format = "fallback" },
+        format_on_save = { timeout_ms = 1000 },
+        formatters_by_ft = {
+          lua = { "stylua" },
+        },
+      })
+
+      vim.keymap.set("n", "<leader>m", function()
+        conform.format({ async = true })
+      end)
+    end,
   },
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     main = "nvim-treesitter.configs",
     opts = { auto_install = true },
-  },
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    main = "ibl",
-    opts = {
-      indent =  { char = "▏" },
-      scope = { enabled = false },
-    },
   },
   {
     "nvim-telescope/telescope.nvim",
@@ -133,7 +192,7 @@ require("lazy").setup({
       vim.keymap.set("n", "<leader>F", builtin.find_files)
 
       vim.keymap.set("n", "<leader>.", function()
-        builtin.find_files { cwd = utils.buffer_dir() }
+        builtin.find_files({ cwd = utils.buffer_dir() })
       end)
     end,
   },
