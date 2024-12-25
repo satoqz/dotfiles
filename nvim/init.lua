@@ -80,8 +80,15 @@ require("lazy").setup({
     "echasnovski/mini.nvim",
     config = function()
       require("mini.pairs").setup()
-      require("mini.comment").setup()
       require("mini.surround").setup()
+
+      require("mini.comment").setup({
+        mappings = {
+          comment_line = "<C-c>",
+          comment_visual = "<C-c>",
+        },
+      })
+
       require("mini.bufremove").setup()
       vim.keymap.set("n", "<leader>w", MiniBufremove.delete)
     end,
@@ -217,6 +224,7 @@ require("lazy").setup({
     dependencies = { "nvim-lua/plenary.nvim", "MunifTanjim/nui.nvim" },
     config = function()
       require("neo-tree").setup({
+        close_if_last_window = true,
         enable_git_status = false,
         enable_diagnostics = false,
         filesystem = {
