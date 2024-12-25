@@ -1,10 +1,11 @@
-theme = tokyonight
+theme = gruvbox-material
+palette = 8=#928374
 
 font-family = GeistMono NFM
 font-feature = -liga
 font-thicken = true
 adjust-cell-width = -1
-font-size = 16
+font-size = 18
 
 font-style-bold = false
 font-style-italic = false
