@@ -44,3 +44,12 @@ vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, {
 vim.schedule(function()
   vim.opt.clipboard = "unnamedplus"
 end)
+
+local git_commit_group = vim.api.nvim_create_augroup("GitCommitGroup", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+  group = git_commit_group,
+  pattern = "gitcommit",
+  callback = function()
+    vim.wo.colorcolumn = "50,72"
+  end,
+})
