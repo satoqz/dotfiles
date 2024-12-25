@@ -47,6 +47,9 @@ end)
 
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
+vim.keymap.set("n", "gn", "<cmd>bnext<CR>")
+vim.keymap.set("n", "gp", "<cmd>bprevious<CR>")
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not vim.uv.fs_stat(lazypath) then
@@ -87,7 +90,19 @@ require("lazy").setup({
     opts = {
       appearance = { use_nvim_cmp_as_default = true },
       signature = { enabled = true },
-      sources = { default = { "lsp", "path" } },
+      completion = { documentation = { auto_show = true } },
+      sources = { default = { "lsp", "path" }, cmdline = {} },
+      keymap = {
+        preset = "none",
+        ["<Tab>"] = { "select_next", "fallback" },
+        ["<S-Tab>"] = { "select_prev", "fallback" },
+        ["<Up>"] = { "select_prev", "fallback" },
+        ["<Down>"] = { "select_next", "fallback" },
+        ["<CR>"] = { "accept", "fallback" },
+        ["<C-d>"] = { "scroll_documentation_down", "fallback" },
+        ["<C-u>"] = { "scroll_documentation_up", "fallback" },
+        ["<C-e>"] = { "hide", "fallback" },
+      },
     },
   },
   {
@@ -95,9 +110,7 @@ require("lazy").setup({
     dependencies = {
       {
         "j-hui/fidget.nvim",
-        opts = {
-          notification = { window = { winblend = 0 } },
-        },
+        opts = { notification = { window = { winblend = 0 } } },
       },
       "saghen/blink.cmp",
     },
@@ -120,26 +133,9 @@ require("lazy").setup({
         lspconfig[server].setup(config)
       end
 
-      vim.api.nvim_create_autocmd("LspAttach", {
-        group = vim.api.nvim_create_augroup("init.lua-lsp-attach", { clear = true }),
-        callback = function(event)
-          local map = function(keys, func, mode)
-            vim.keymap.set(mode or "n", keys, func, { buffer = event.buf })
-          end
-
-          local builtin = require("telescope.builtin")
-
-          map("gd", builtin.lsp_definitions)
-          map("gD", vim.lsp.buf.declaration)
-          map("gt", builtin.lsp_type_definitions)
-          map("gi", builtin.lsp_implementations)
-          map("<leader>a", vim.lsp.buf.code_action, { "n", "x" })
-          map("<leader>d", builtin.diagnostics)
-          map("<leader>r", vim.lsp.buf.rename)
-          map("<leader>s", builtin.lsp_document_symbols)
-          map("<leader>S", builtin.lsp_workspace_symbols)
-        end,
-      })
+      vim.keymap.set("n", "gD", vim.lsp.buf.declaration)
+      vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename)
+      vim.keymap.set({ "n", "x" }, "<leader>a", vim.lsp.buf.code_action)
     end,
   },
   {
@@ -150,12 +146,10 @@ require("lazy").setup({
       conform.setup({
         default_format_opts = { lsp_format = "fallback" },
         format_on_save = { timeout_ms = 1000 },
-        formatters_by_ft = {
-          lua = { "stylua" },
-        },
+        formatters_by_ft = { lua = { "stylua" } },
       })
 
-      vim.keymap.set("n", "<leader>m", function()
+      vim.keymap.set("n", "<leader>c", function()
         conform.format({ async = true })
       end)
     end,
@@ -164,7 +158,9 @@ require("lazy").setup({
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     main = "nvim-treesitter.configs",
-    opts = { auto_install = true },
+    opts = {
+      auto_install = true,
+    },
   },
   {
     "nvim-telescope/telescope.nvim",
@@ -193,10 +189,17 @@ require("lazy").setup({
 
       vim.keymap.set("n", "<leader>f", builtin.git_files)
       vim.keymap.set("n", "<leader>F", builtin.find_files)
-
       vim.keymap.set("n", "<leader>.", function()
         builtin.find_files({ cwd = utils.buffer_dir() })
       end)
+
+      vim.keymap.set("n", "<leader>d", builtin.diagnostics)
+      vim.keymap.set("n", "<leader>s", builtin.lsp_document_symbols)
+      vim.keymap.set("n", "<leader>S", builtin.lsp_workspace_symbols)
+
+      vim.keymap.set("n", "gd", builtin.lsp_definitions)
+      vim.keymap.set("n", "gt", builtin.lsp_type_definitions)
+      vim.keymap.set("n", "gi", builtin.lsp_implementations)
     end,
   },
   {
@@ -216,14 +219,8 @@ require("lazy").setup({
         enable_git_status = false,
         enable_diagnostics = false,
         filesystem = {
-          filtered_items = {
-            hide_dotfiles = false,
-            hide_gitignored = false,
-          },
-          follow_current_file = {
-            enabled = true,
-            leave_dirs_open = true,
-          },
+          filtered_items = { hide_dotfiles = false, hide_gitignored = false },
+          follow_current_file = { enabled = true, leave_dirs_open = true },
         },
       })
 
@@ -231,7 +228,5 @@ require("lazy").setup({
     end,
   },
 }, {
-  install = {
-    colorscheme = { "gruvbox-material" },
-  },
+  install = { colorscheme = { "gruvbox-material" } },
 })
