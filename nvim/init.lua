@@ -5,7 +5,6 @@ vim.opt.termguicolors = true
 
 vim.opt.number = true
 vim.opt.signcolumn = "yes"
-vim.opt.cursorline = true
 
 vim.opt.scrolloff = 8
 
@@ -107,7 +106,11 @@ require("lazy").setup({
       local blink = require("blink.cmp")
 
       local servers = {
-        rust_analyzer = {},
+        rust_analyzer = {
+          on_attach = function(client, bufnr)
+            vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+          end,
+        },
         gopls = {},
         terraformls = {},
       }
