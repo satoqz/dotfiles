@@ -34,13 +34,25 @@ return {
       local lspconfig = require("lspconfig")
       local blink = require("blink.cmp")
 
+      local function enable_inlay_hints(_, bufnr)
+        vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+      end
+
       local servers = {
         rust_analyzer = {
-          on_attach = function(client, bufnr)
-            vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
-          end,
+          on_attach = enable_inlay_hints,
+          settings = {
+            ["rust-analyzer"] = {
+              inlayHints = {
+                parameterHints = { enable = false },
+                genericParameterHints = { const = { enable = false } },
+              },
+            },
+          },
         },
-        gopls = {},
+        gopls = {
+          on_attach = enable_inlay_hints,
+        },
         terraformls = {},
       }
 
