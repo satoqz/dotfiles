@@ -27,8 +27,6 @@ return {
 
       local is_inside_work_tree = {}
 
-      local function find_files(opts) end
-
       vim.keymap.set("n", "<leader>f", function()
         local cwd = vim.fn.getcwd()
         if is_inside_work_tree[cwd] == nil then
