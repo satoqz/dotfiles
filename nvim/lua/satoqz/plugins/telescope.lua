@@ -12,6 +12,7 @@ return {
           sorting_strategy = "ascending",
           layout_config = { horizontal = { prompt_position = "top" } },
           mappings = { i = { ["<esc>"] = actions.close } },
+          borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
         },
       })
 
@@ -24,8 +25,24 @@ return {
 
       vim.keymap.set("n", "<leader>b", builtin.buffers)
 
-      vim.keymap.set("n", "<leader>f", builtin.git_files)
-      vim.keymap.set("n", "<leader>F", builtin.find_files)
+      local is_inside_work_tree = {}
+
+      local function find_files(opts) end
+
+      vim.keymap.set("n", "<leader>f", function()
+        local cwd = vim.fn.getcwd()
+        if is_inside_work_tree[cwd] == nil then
+          vim.fn.system("git rev-parse --is-inside-work-tree")
+          is_inside_work_tree[cwd] = vim.v.shell_error == 0
+        end
+
+        if is_inside_work_tree[cwd] then
+          builtin.git_files()
+        else
+          builtin.find_files()
+        end
+      end)
+
       vim.keymap.set("n", "<leader>.", function()
         builtin.find_files({ cwd = utils.buffer_dir() })
       end)
