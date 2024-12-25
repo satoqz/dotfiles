@@ -3,7 +3,6 @@ return {
     "saghen/blink.cmp",
     version = "*",
     opts = {
-      appearance = { use_nvim_cmp_as_default = true },
       signature = { enabled = true },
       completion = { documentation = { auto_show = true } },
       sources = { default = { "lsp", "path" }, cmdline = {} },
