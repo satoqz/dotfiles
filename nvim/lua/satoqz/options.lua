@@ -23,9 +23,6 @@ vim.opt.ignorecase = true
 
 vim.opt.autoindent = true
 
-vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
-
 vim.opt.undofile = true
 vim.opt.swapfile = false
 
