@@ -8,11 +8,13 @@ return {
       local actions = require("telescope.actions")
 
       require("telescope").setup({
-        defaults = {
-          sorting_strategy = "ascending",
-          layout_config = { horizontal = { prompt_position = "top" } },
-          mappings = { i = { ["<esc>"] = actions.close } },
-        },
+        defaults = require("telescope.themes").get_ivy({
+          borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
+          layout_config = { height = 0.7 },
+          mappings = {
+            i = { ["<esc>"] = actions.close },
+          },
+        }),
       })
 
       local builtin = require("telescope.builtin")
@@ -40,13 +42,18 @@ return {
         end
       end)
 
+      vim.keymap.set("n", "<leader>'", builtin.resume)
+
       vim.keymap.set("n", "<leader>.", function()
         builtin.find_files({ cwd = utils.buffer_dir() })
       end)
 
-      vim.keymap.set("n", "<leader>d", builtin.diagnostics)
+      vim.keymap.set("n", "<leader>d", function()
+        builtin.diagnostics({ severity_limit = "warn" })
+      end)
+
       vim.keymap.set("n", "<leader>s", builtin.lsp_document_symbols)
-      vim.keymap.set("n", "<leader>S", builtin.lsp_workspace_symbols)
+      vim.keymap.set("n", "<leader>S", builtin.lsp_dynamic_workspace_symbols)
 
       vim.keymap.set("n", "gd", builtin.lsp_definitions)
       vim.keymap.set("n", "gy", builtin.lsp_type_definitions)

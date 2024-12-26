@@ -13,6 +13,8 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("satoqz.plugins", {
+require("lazy").setup({
+  spec = "satoqz.plugins",
+  change_detection = { notify = false },
   install = { colorscheme = { "tokyonight" } },
 })
