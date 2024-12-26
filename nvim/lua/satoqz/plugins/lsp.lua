@@ -45,7 +45,6 @@ return {
     "saghen/blink.cmp",
     version = "*",
     opts = {
-      -- signature = { enabled = true },
       completion = { documentation = { auto_show = true } },
       sources = { default = { "lsp", "path" }, cmdline = {} },
       keymap = { preset = "super-tab" },
