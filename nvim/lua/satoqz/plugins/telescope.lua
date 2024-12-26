@@ -20,11 +20,14 @@ return {
       local builtin = require("telescope.builtin")
       local utils = require("telescope.utils")
 
+      vim.keymap.set("n", "<leader>'", builtin.resume)
+      vim.keymap.set("n", "<leader>b", function()
+        builtin.buffers({ sort_mru = true })
+      end)
+
       vim.keymap.set("n", "<leader>/", function()
         builtin.grep_string({ search = vim.fn.input("grep: ") })
       end)
-
-      vim.keymap.set("n", "<leader>b", builtin.buffers)
 
       local is_inside_work_tree = {}
 
@@ -42,22 +45,23 @@ return {
         end
       end)
 
-      vim.keymap.set("n", "<leader>'", builtin.resume)
-
       vim.keymap.set("n", "<leader>.", function()
         builtin.find_files({ cwd = utils.buffer_dir() })
       end)
 
-      vim.keymap.set("n", "<leader>d", function()
-        builtin.diagnostics({ severity_limit = "warn" })
-      end)
+      local lsp_symbols = vim.tbl_map(string.lower, vim.lsp.protocol.SymbolKind)
+      local symbols = vim.tbl_filter(function(symbol)
+        return symbol ~= "field" and symbol ~= "module"
+      end, lsp_symbols)
 
-      vim.keymap.set("n", "<leader>s", builtin.lsp_document_symbols)
-      vim.keymap.set("n", "<leader>S", builtin.lsp_dynamic_workspace_symbols)
+      vim.keymap.set("n", "<leader>s", function()
+        builtin.lsp_document_symbols({ symbols = symbols })
+      end)
 
       vim.keymap.set("n", "gd", builtin.lsp_definitions)
       vim.keymap.set("n", "gy", builtin.lsp_type_definitions)
       vim.keymap.set("n", "gi", builtin.lsp_implementations)
+      vim.keymap.set("n", "gr", builtin.lsp_references)
     end,
   },
 }
