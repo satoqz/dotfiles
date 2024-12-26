@@ -25,15 +25,8 @@ return {
             },
           },
         },
-        zls = { on_attach = enable_inlay_hints },
-        gopls = {
-          on_attach = enable_inlay_hints,
-          ["ui.inlayhint.hints"] = {
-            compositeLiteralFields = true,
-            constantValues = true,
-            parameterNames = true,
-          },
-        },
+        gopls = {},
+        zls = {},
         terraformls = {},
       }
 
