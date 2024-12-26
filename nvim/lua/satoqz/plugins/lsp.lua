@@ -1,16 +1,5 @@
 return {
   {
-    "saghen/blink.cmp",
-    version = "*",
-    opts = {
-      signature = { enabled = true },
-      completion = { documentation = { auto_show = true } },
-      sources = { default = { "lsp", "path" }, cmdline = {} },
-      keymap = { preset = "super-tab" },
-    },
-  },
-
-  {
     "neovim/nvim-lspconfig",
     dependencies = {
       { "j-hui/fidget.nvim", config = true },
@@ -36,8 +25,14 @@ return {
             },
           },
         },
+        zls = { on_attach = enable_inlay_hints },
         gopls = {
           on_attach = enable_inlay_hints,
+          ["ui.inlayhint.hints"] = {
+            compositeLiteralFields = true,
+            constantValues = true,
+            parameterNames = true,
+          },
         },
         terraformls = {},
       }
@@ -51,6 +46,23 @@ return {
       vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename)
       vim.keymap.set({ "n", "x" }, "<leader>a", vim.lsp.buf.code_action)
     end,
+  },
+
+  {
+    "saghen/blink.cmp",
+    version = "*",
+    opts = {
+      -- signature = { enabled = true },
+      completion = { documentation = { auto_show = true } },
+      sources = { default = { "lsp", "path" }, cmdline = {} },
+      keymap = { preset = "super-tab" },
+    },
+  },
+
+  {
+    "ray-x/lsp_signature.nvim",
+    event = "InsertEnter",
+    opts = { hint_enable = false },
   },
 
   {
