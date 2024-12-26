@@ -12,7 +12,6 @@ return {
           sorting_strategy = "ascending",
           layout_config = { horizontal = { prompt_position = "top" } },
           mappings = { i = { ["<esc>"] = actions.close } },
-          borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
         },
       })
 
@@ -35,7 +34,7 @@ return {
         end
 
         if is_inside_work_tree[cwd] then
-          builtin.git_files()
+          builtin.git_files({ show_untracked = true })
         else
           builtin.find_files()
         end
@@ -50,7 +49,7 @@ return {
       vim.keymap.set("n", "<leader>S", builtin.lsp_workspace_symbols)
 
       vim.keymap.set("n", "gd", builtin.lsp_definitions)
-      vim.keymap.set("n", "gt", builtin.lsp_type_definitions)
+      vim.keymap.set("n", "gy", builtin.lsp_type_definitions)
       vim.keymap.set("n", "gi", builtin.lsp_implementations)
     end,
   },

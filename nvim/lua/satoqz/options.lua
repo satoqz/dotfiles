@@ -4,7 +4,6 @@ vim.g.maplocalleader = " "
 vim.opt.termguicolors = true
 
 vim.opt.number = true
-vim.opt.signcolumn = "yes"
 
 vim.opt.scrolloff = 8
 
@@ -27,6 +26,7 @@ vim.opt.undofile = true
 vim.opt.swapfile = false
 
 vim.opt.splitright = true
+vim.opt.splitbelow = true
 
 vim.opt.autoread = true
 
