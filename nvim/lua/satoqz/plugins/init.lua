@@ -1,9 +1,5 @@
 return {
   "tpope/vim-sleuth",
-  {
-    "tpope/vim-fugitive",
-    dependencies = { "tpope/vim-rhubarb" },
-  },
 
   {
     "windwp/nvim-autopairs",
@@ -17,6 +13,16 @@ return {
       require("mini.surround").setup()
       require("mini.comment").setup()
     end,
+  },
+
+  {
+    "tpope/vim-fugitive",
+    dependencies = { "tpope/vim-rhubarb" },
+  },
+
+  {
+    "lewis6991/gitsigns.nvim",
+    opts = { signs_staged_enable = false },
   },
 
   {
