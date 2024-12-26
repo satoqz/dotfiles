@@ -11,7 +11,14 @@ return {
     "echasnovski/mini.nvim",
     config = function()
       require("mini.surround").setup()
-      require("mini.comment").setup()
+
+      require("mini.comment").setup({
+        mappings = {
+          comment_line = "<C-c>",
+          comment_visual = "<C-c>",
+        },
+      })
+
       require("mini.bufremove").setup()
       vim.keymap.set("n", "<leader>w", MiniBufremove.delete)
     end,
