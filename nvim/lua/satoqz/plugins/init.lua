@@ -12,6 +12,8 @@ return {
     config = function()
       require("mini.surround").setup()
       require("mini.comment").setup()
+      require("mini.bufremove").setup()
+      vim.keymap.set("n", "<leader>w", MiniBufremove.delete)
     end,
   },
 
