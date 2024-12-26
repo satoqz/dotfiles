@@ -67,6 +67,8 @@ return {
 
   {
     "stevearc/conform.nvim",
+    event = "BufWritePre",
+    command = "ConformInfo",
     config = function()
       local conform = require("conform")
 
