@@ -6,17 +6,7 @@ return {
       signature = { enabled = true },
       completion = { documentation = { auto_show = true } },
       sources = { default = { "lsp", "path" }, cmdline = {} },
-      keymap = {
-        preset = "none",
-        ["<Tab>"] = { "select_next", "fallback" },
-        ["<S-Tab>"] = { "select_prev", "fallback" },
-        ["<Up>"] = { "select_prev", "fallback" },
-        ["<Down>"] = { "select_next", "fallback" },
-        ["<CR>"] = { "accept", "fallback" },
-        ["<C-d>"] = { "scroll_documentation_down", "fallback" },
-        ["<C-u>"] = { "scroll_documentation_up", "fallback" },
-        ["<C-e>"] = { "hide", "fallback" },
-      },
+      keymap = { preset = "super-tab" },
     },
   },
 
