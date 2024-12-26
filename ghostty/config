@@ -18,8 +18,10 @@ mouse-hide-while-typing = true
 
 window-height = 1000
 window-width = 1000
+
 window-padding-x = 6
 window-padding-y = 6
+window-padding-color = extend
 
 confirm-close-surface = false
 unfocused-split-opacity = 1
