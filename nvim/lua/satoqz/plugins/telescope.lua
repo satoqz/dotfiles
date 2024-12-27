@@ -29,24 +29,12 @@ return {
         builtin.grep_string({ search = vim.fn.input("grep: ") })
       end)
 
-      local is_inside_work_tree = {}
-
       vim.keymap.set("n", "<leader>f", function()
-        local cwd = vim.fn.getcwd()
-        if is_inside_work_tree[cwd] == nil then
-          vim.fn.system("git rev-parse --is-inside-work-tree")
-          is_inside_work_tree[cwd] = vim.v.shell_error == 0
-        end
-
-        if is_inside_work_tree[cwd] then
-          builtin.git_files({ show_untracked = true })
-        else
-          builtin.find_files()
-        end
+        builtin.find_files({ hidden = true })
       end)
 
       vim.keymap.set("n", "<leader>.", function()
-        builtin.find_files({ cwd = utils.buffer_dir() })
+        builtin.find_files({ hidden = true, cwd = utils.buffer_dir() })
       end)
 
       local lsp_symbols = vim.tbl_map(string.lower, vim.lsp.protocol.SymbolKind)
