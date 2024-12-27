@@ -30,6 +30,9 @@ return {
         terraformls = {},
       }
 
+      vim.g.zig_fmt_parse_errors = 0
+      vim.g.zig_fmt_autosave = 0
+
       for server, config in pairs(servers) do
         config.capabilities = blink.get_lsp_capabilities(config.capabilities)
         lspconfig[server].setup(config)
