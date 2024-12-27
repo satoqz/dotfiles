@@ -18,6 +18,7 @@ return {
           on_attach = enable_inlay_hints,
           settings = {
             ["rust-analyzer"] = {
+              completion = { callable = { snippets = "add_parentheses" } },
               inlayHints = {
                 parameterHints = { enable = false },
                 genericParameterHints = { const = { enable = false } },
@@ -38,6 +39,7 @@ return {
         lspconfig[server].setup(config)
       end
 
+      vim.keymap.set("i", "<C-s>", vim.lsp.buf.signature_help)
       vim.keymap.set("n", "gD", vim.lsp.buf.declaration)
       vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename)
       vim.keymap.set({ "n", "x" }, "<leader>a", vim.lsp.buf.code_action)
@@ -48,16 +50,12 @@ return {
     "saghen/blink.cmp",
     version = "*",
     opts = {
-      completion = { documentation = { auto_show = true } },
-      sources = { default = { "lsp", "path" }, cmdline = {} },
       keymap = { preset = "super-tab" },
+      sources = { default = { "lsp", "path" }, cmdline = {} },
+      completion = {
+        menu = { draw = { columns = { { "label", "label_description", gap = 1 } } } },
+      },
     },
-  },
-
-  {
-    "ray-x/lsp_signature.nvim",
-    event = "InsertEnter",
-    opts = { hint_enable = false },
   },
 
   {
