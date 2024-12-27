@@ -9,6 +9,7 @@ return {
 
       require("telescope").setup({
         defaults = require("telescope.themes").get_ivy({
+          file_ignore_patterns = { ".git/", ".venv/" },
           borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
           layout_config = { height = 0.7 },
           mappings = {
