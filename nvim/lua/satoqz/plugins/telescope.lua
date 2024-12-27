@@ -40,7 +40,12 @@ return {
 
       local lsp_symbols = vim.tbl_map(string.lower, vim.lsp.protocol.SymbolKind)
       local symbols = vim.tbl_filter(function(symbol)
-        return symbol ~= "field" and symbol ~= "module"
+        for _, s in ipairs({ "enummember", "field", "module" }) do
+          if s == symbol then
+            return false
+          end
+        end
+        return true
       end, lsp_symbols)
 
       vim.keymap.set("n", "<leader>s", function()
