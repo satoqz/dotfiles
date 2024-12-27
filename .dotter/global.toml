@@ -1,11 +1,10 @@
 [core.files]
-ghostty = "~/.config/ghostty"
-git = "~/.config/git"
-nvim = "~/.config/nvim"
-tmux = "~/.config/tmux"
-tmux-sessionizer = "~/.config/tms"
+"ghostty/config" = "~/.config/ghostty/config"
+"git/ignore" = "~/.config/git/ignore"
+"vim/vimrc" = "~/.vimrc"
 "zsh/zprofile" = "~/.zprofile"
 "zsh/zshrc" = "~/.zshrc"
 
 [darwin.files]
+"code/settings.json" = "~/Library/Application Support/Code/User/settings.json"
 "extra/hushlogin" = "~/.hushlogin"

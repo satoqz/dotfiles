@@ -1,0 +1,15 @@
+syntax on
+
+set autoindent expandtab
+set number ruler scrolloff=4 mouse=a
+set encoding=utf-8 fileencoding=utf-8
+set ignorecase hlsearch
+set clipboard=unnamed
+set noswapfile
+set autoread
+
+nnoremap <silent> <Esc> :nohlsearch<CR>
+nnoremap <silent> gn <cmd>bnext<CR>
+nnoremap <silent> gp <cmd>bprev<CR>
+
+filetype plugin indent on

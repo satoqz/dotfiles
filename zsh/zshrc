@@ -1,5 +1,3 @@
-#!/usr/bin/env zsh
-
 bindkey -v
 
 HISTSIZE=10000
@@ -20,7 +18,6 @@ if_installed() { command -v "$1" > /dev/null; }
 
 alias ls="ls --color -F -A"
 if_installed eza && alias ls="eza -F -A"
-if_installed nvim && alias vim="nvim"
 if_installed kubectl && alias k="kubectl"
 if_installed kubecolor && alias kubectl="kubecolor" && compdef kubecolor=kubectl
 
