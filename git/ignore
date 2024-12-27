@@ -1,3 +1,9 @@
+# MacOS nonsense
 .DS_Store
+
+# Secrets, local configuration
 .env*
 .direnv
+
+# Editor configuration
+.nvim.lua

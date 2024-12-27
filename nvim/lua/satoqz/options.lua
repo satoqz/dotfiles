@@ -20,6 +20,7 @@ vim.opt.swapfile = false
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.autoread = true
+vim.opt.exrc = true
 
 vim.diagnostic.config({ signs = false })
 
