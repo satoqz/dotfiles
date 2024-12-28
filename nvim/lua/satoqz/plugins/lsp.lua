@@ -10,10 +10,11 @@ return {
       local blink = require("blink.cmp")
 
       local servers = {
-        rust_analyzer = {},
         gopls = {},
-        zls = {},
+        rust_analyzer = {},
         terraformls = {},
+        ts_ls = {},
+        zls = {},
       }
 
       vim.g.zig_fmt_parse_errors = 0
