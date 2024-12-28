@@ -1,6 +1,7 @@
 theme = tokyonight-storm
 
 font-family = GeistMono NFM
+font-feature = -liga
 font-thicken = true
 font-size = 16
 adjust-cell-width = -2
