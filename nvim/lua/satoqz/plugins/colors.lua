@@ -11,7 +11,10 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-      require("tokyonight").setup({ style = "storm" })
+      require("tokyonight").setup({
+        style = "storm",
+        styles = { sidebars = "normal" },
+      })
       vim.cmd.colorscheme("tokyonight")
     end,
   },

@@ -11,14 +11,12 @@ return {
     "echasnovski/mini.nvim",
     config = function()
       require("mini.surround").setup()
-
       require("mini.comment").setup({
         mappings = {
           comment_line = "<C-c>",
           comment_visual = "<C-c>",
         },
       })
-
     end,
   },
 
@@ -31,13 +29,31 @@ return {
   },
 
   {
-    "lewis6991/gitsigns.nvim",
-    opts = { signs_staged_enable = false },
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+    },
+    config = function()
+      require("neo-tree").setup({
+        close_if_last_window = true,
+        enable_diagnostics = false,
+        enable_git_status = false,
+        filesystem = {
+          filtered_items = { hide_dotfiles = false },
+          follow_current_file = { enabled = true, leave_dirs_open = true },
+        },
+      })
+
+      vim.keymap.set("n", "<leader>e", "<cmd>Neotree<CR>")
+      vim.keymap.set("n", "<leader>E", "<cmd>Neotree toggle<CR>")
+    end,
   },
 
   {
-    "stevearc/oil.nvim",
-    config = true,
+    "lewis6991/gitsigns.nvim",
+    opts = { signs_staged_enable = false },
   },
 
   {
