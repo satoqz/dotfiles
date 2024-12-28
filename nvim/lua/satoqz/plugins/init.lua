@@ -21,14 +21,6 @@ return {
   },
 
   {
-    "tpope/vim-fugitive",
-    dependencies = { "tpope/vim-rhubarb" },
-    config = function()
-      vim.keymap.set("n", "<leader>g", "<cmd>Gedit :<CR>")
-    end,
-  },
-
-  {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
     dependencies = {
@@ -53,7 +45,7 @@ return {
 
   {
     "lewis6991/gitsigns.nvim",
-    opts = { signs_staged_enable = false },
+    config = true,
   },
 
   {
