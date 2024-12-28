@@ -7,6 +7,12 @@ return {
   },
 
   {
+    "nvim-treesitter/nvim-treesitter-context",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    config = true,
+  },
+
+  {
     "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
