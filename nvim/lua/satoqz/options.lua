@@ -19,15 +19,12 @@ vim.opt.undofile = true
 vim.opt.swapfile = false
 vim.opt.splitright = true
 vim.opt.splitbelow = true
+vim.opt.clipboard = "unnamedplus"
 vim.opt.autoread = true
 vim.opt.exrc = true
 
 vim.lsp.inlay_hint.enable(true)
 vim.diagnostic.config({ signs = false })
-
-vim.schedule(function()
-  vim.opt.clipboard = "unnamedplus"
-end)
 
 vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, {
   pattern = "*",

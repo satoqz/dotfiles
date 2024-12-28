@@ -11,6 +11,7 @@ return {
 
       local servers = {
         gopls = {},
+        lua_ls = {},
         rust_analyzer = {},
         terraformls = {},
         ts_ls = {},
@@ -28,11 +29,31 @@ return {
   },
 
   {
+    "folke/lazydev.nvim",
+    ft = "lua",
+    opts = {
+      library = {
+        { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+      },
+    },
+  },
+
+  {
     "saghen/blink.cmp",
     version = "*",
     opts = {
       keymap = { preset = "super-tab" },
-      sources = { default = { "lsp", "path" }, cmdline = {} },
+      sources = {
+        cmdline = {},
+        default = { "lazydev", "lsp", "path" },
+        providers = {
+          lazydev = {
+            name = "LazyDev",
+            module = "lazydev.integrations.blink",
+            score_offset = 100,
+          },
+        },
+      },
     },
   },
 
