@@ -19,8 +19,6 @@ return {
         },
       })
 
-      require("mini.bufremove").setup()
-      vim.keymap.set("n", "<leader>w", MiniBufremove.delete)
     end,
   },
 
