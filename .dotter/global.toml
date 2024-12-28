@@ -7,3 +7,7 @@ nvim = "~/.config/nvim"
 
 [darwin.files]
 "extra/hushlogin" = "~/.hushlogin"
+lazygit = "~/Library/Application Support/lazygit"
+
+[linux.files]
+lazygit = "~/config/lazygit"

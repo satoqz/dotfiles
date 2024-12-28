@@ -7,15 +7,17 @@ return {
   },
 
   {
-    "folke/tokyonight.nvim",
+    "olimorris/onedarkpro.nvim",
     lazy = false,
     priority = 1000,
     config = function()
-      require("tokyonight").setup({
-        style = "storm",
-        styles = { sidebars = "normal" },
+      require("onedarkpro").setup({
+        highlights = {
+          NeoTreeDirectoryIcon = { fg = "${blue}" },
+          NeoTreeRootName = { fg = "${blue}" },
+        },
       })
-      vim.cmd.colorscheme("tokyonight")
+      vim.cmd.colorscheme("onedark")
     end,
   },
 }
