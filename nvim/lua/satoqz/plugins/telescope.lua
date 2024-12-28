@@ -38,18 +38,28 @@ return {
         builtin.find_files({ hidden = true, cwd = utils.buffer_dir() })
       end)
 
-      local lsp_symbols = vim.tbl_map(string.lower, vim.lsp.protocol.SymbolKind)
-      local symbols = vim.tbl_filter(function(symbol)
-        for _, s in ipairs({ "enummember", "field", "module" }) do
-          if s == symbol then
-            return false
-          end
-        end
-        return true
-      end, lsp_symbols)
+      vim.keymap.set("n", "<leader>th", function()
+        builtin.colorscheme({ enable_preview = true })
+      end)
+
+      vim.keymap.set("n", "<leader>gs", builtin.git_status)
+      vim.keymap.set("n", "<leader>gS", builtin.git_stash)
+      vim.keymap.set("n", "<leader>gc", builtin.git_commits)
+      vim.keymap.set("n", "<leader>gb", builtin.git_branches)
 
       vim.keymap.set("n", "<leader>s", function()
-        builtin.lsp_document_symbols({ symbols = symbols })
+        builtin.lsp_document_symbols({
+          symbols = {
+            "Class",
+            "Constant",
+            "Constructor",
+            "Enum",
+            "Function",
+            "Interface",
+            "Method",
+            "Struct",
+          },
+        })
       end)
 
       vim.keymap.set("n", "gd", builtin.lsp_definitions)

@@ -2,6 +2,7 @@ vim.g.mapleader = " "
 
 vim.opt.termguicolors = true
 vim.opt.number = true
+vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes"
 vim.opt.scrolloff = 8
 vim.opt.wrap = false
@@ -19,10 +20,20 @@ vim.opt.undofile = true
 vim.opt.swapfile = false
 vim.opt.splitright = true
 vim.opt.splitbelow = true
-vim.opt.statusline = "%{expand('%:.')}"
 vim.opt.clipboard = "unnamedplus"
 vim.opt.autoread = true
 vim.opt.exrc = true
+
+-- https://www.reddit.com/r/neovim/comments/1dfhv97/how_to_get_relative_path_in_statusline/
+function StatusLine()
+  local rest = " %m %r %w%=%y %l:%c "
+  if vim.fn.expand("%:~:.") == "" or vim.bo.buftype ~= "" then
+    return "%t" .. rest
+  end
+  return vim.fn.expand("%:~:.") .. rest
+end
+
+vim.opt.statusline = "%!v:lua.StatusLine()"
 
 vim.lsp.inlay_hint.enable(true)
 vim.diagnostic.config({ signs = false })
