@@ -1,28 +1,15 @@
 export GOPATH="$HOME/.go"
 
-# https://github.com/folke/tokyonight.nvim/blob/main/extras/fzf/tokyonight_storm.sh
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
   --highlight-line \
   --info=inline-right \
   --ansi \
   --layout=reverse \
-  --border=none
-  --color=bg+:#2e3c64 \
-  --color=bg:#1f2335 \
-  --color=border:#29a4bd \
-  --color=fg:#c0caf5 \
-  --color=gutter:#1f2335 \
-  --color=header:#ff9e64 \
-  --color=hl+:#2ac3de \
-  --color=hl:#2ac3de \
-  --color=info:#545c7e \
-  --color=marker:#ff007c \
-  --color=pointer:#ff007c \
-  --color=prompt:#2ac3de \
-  --color=query:#c0caf5:regular \
-  --color=scrollbar:#29a4bd \
-  --color=separator:#ff9e64 \
-  --color=spinner:#ff007c \
+  --color=fg:#abb2bf,bg:#21252b,hl:#98c379 \
+  --color=fg+:#abb2bf,bg+:#282c34,hl+:#98c379 \
+  --color=info:#5c6370,prompt:#c678dd,pointer:#c678dd \
+  --color=marker:#c678dd,spinner:#5c6370,header:#abb2bf \
+  --color=gutter:#21252b \
 "
 
 if [[ -x "/opt/homebrew/bin/brew" ]]; then

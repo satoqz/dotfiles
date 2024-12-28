@@ -11,7 +11,6 @@ return {
     "echasnovski/mini.nvim",
     config = function()
       require("mini.surround").setup()
-      require("mini.starter").setup({ footer = "", silent = true })
       require("mini.comment").setup({
         mappings = {
           comment_line = "<C-c>",
