@@ -5,7 +5,7 @@ SAVEHIST=10000
 
 setopt extended_history \
     hist_ignore_space hist_ignore_dups hist_ignore_all_dups \
-    hist_save_no_dups hist_expire_dups_first 
+    hist_save_no_dups hist_expire_dups_first
 
 zstyle ":completion:" rehash true
 zstyle ":completion:*:default" menu select=1
@@ -34,7 +34,7 @@ unset maybe_source if_installed
 
 precmd() {
     PROMPT="%(?.%F{green}.%F{red})➜ "
-    [[ -n "$SSH_CONNECTION" ]] && PROMPT+="%F{green}%m " 
+    [[ -n "$SSH_CONNECTION" ]] && PROMPT+="%F{green}%m "
     PROMPT+="%F{cyan}"
 
     _repo_path="$(command -v git &> /dev/null \
