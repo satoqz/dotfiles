@@ -34,7 +34,6 @@ vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-  group = vim.api.nvim_create_augroup("satoqz-git-commit", { clear = true }),
   pattern = "gitcommit",
   callback = function()
     vim.wo.colorcolumn = "50,72"
