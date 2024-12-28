@@ -19,6 +19,7 @@ vim.opt.undofile = true
 vim.opt.swapfile = false
 vim.opt.splitright = true
 vim.opt.splitbelow = true
+vim.opt.statusline = "%{expand('%:.')}"
 vim.opt.clipboard = "unnamedplus"
 vim.opt.autoread = true
 vim.opt.exrc = true
