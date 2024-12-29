@@ -7,29 +7,13 @@ return {
   },
 
   {
-    "olimorris/onedarkpro.nvim",
+    "sainnhe/gruvbox-material",
+    event = "VeryLazy",
     lazy = false,
     priority = 1000,
     config = function()
-      require("onedarkpro").setup({
-        highlights = {
-          -- Completely invisible by default.
-          MiniTrailspace = { bg = "${red}" },
-          -- Colors the entire foreground by default, this only undercurls it.
-          DiagnosticUnderlineError = { sp = "${red}", undercurl = true },
-          DiagnosticUnderlineWarn = { sp = "${yellow}", undercurl = true },
-          DiagnosticUnderlineInfo = { sp = "${blue}", undercurl = true },
-          DiagnosticUnderlineHint = { sp = "${cyan}", undercurl = true },
-        },
-      })
-
-      vim.cmd.colorscheme("onedark")
+      vim.cmd.colorscheme("gruvbox-material")
     end,
-  },
-
-  {
-    "sainnhe/gruvbox-material",
-    event = "VeryLazy",
   },
 
   {

@@ -7,11 +7,6 @@ return {
       require("mini.operators").setup()
       require("mini.trailspace").setup()
 
-      require("mini.starter").setup({
-        footer = "",
-        silent = true,
-      })
-
       require("mini.pairs").setup({
         mappings = {
           -- Fixes Rust lifetimes such as &'a.
