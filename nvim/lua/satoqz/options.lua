@@ -24,31 +24,19 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.autoread = true
 vim.opt.exrc = true
 
--- https://www.reddit.com/r/neovim/comments/1dfhv97/how_to_get_relative_path_in_statusline/
-function StatusLine()
-  local rest = " %m %r %w%=%y %l:%c "
-  if vim.fn.expand("%:~:.") == "" or vim.bo.buftype ~= "" then
-    return "%t" .. rest
-  end
-  return vim.fn.expand("%:~:.") .. rest
-end
-
-vim.opt.statusline = "%!v:lua.StatusLine()"
-
 vim.lsp.inlay_hint.enable(true)
 vim.diagnostic.config({ signs = false })
+
+vim.api.nvim_create_autocmd("TextYankPost", {
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
 
 vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, {
   pattern = "*",
   callback = function()
     vim.cmd.checktime()
-  end,
-})
-
-vim.api.nvim_create_autocmd("TextYankPost", {
-  desc = "Highlight when yanking (copying) text",
-  callback = function()
-    vim.highlight.on_yank()
   end,
 })
 
@@ -58,3 +46,52 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.wo.colorcolumn = "50,72"
   end,
 })
+
+function StatusLine()
+  local bufnr = vim.fn.winbufnr(vim.g.statusline_winid)
+
+  local path_component = vim.bo[bufnr].buftype == ""
+      and vim.fn.fnamemodify(vim.fn.bufname(bufnr), ":~:.")
+    or "%f"
+
+  local modified_component = vim.bo[bufnr].modified and " [+]" or ""
+  local readonly_component = vim.bo[bufnr].readonly and " [readonly]" or ""
+
+  local statusline_type = vim.api.nvim_get_current_win() == vim.g.statusline_winid and "" or "Nc"
+
+  for _, kind in pairs({ "Error", "Warn" }) do
+    vim.api.nvim_set_hl(0, "Statusline" .. kind .. statusline_type, {
+      fg = vim.api.nvim_get_hl(0, { name = "Diagnostic" .. kind }).fg,
+      bg = vim.api.nvim_get_hl(0, { name = "Statusline" .. statusline_type }).bg,
+    })
+  end
+
+  local function colorize(color, component)
+    return "%#" .. color .. "#" .. component .. "%*"
+  end
+
+  local diagnostics = vim.diagnostic.get(bufnr)
+
+  local errors = vim.tbl_filter(function(diagnostic)
+    return diagnostic.severity == vim.diagnostic.severity.ERROR
+  end, diagnostics)
+  local warnings = vim.tbl_filter(function(diagnostic)
+    return diagnostic.severity == vim.diagnostic.severity.WARN
+  end, diagnostics)
+
+  local error_component = #errors > 0
+      and colorize("StatuslineError" .. statusline_type, " ~" .. #errors)
+    or ""
+  local warning_component = #warnings > 0
+      and colorize("StatuslineWarn" .. statusline_type, " ~" .. #warnings)
+    or ""
+  local diagnostics_component = error_component .. warning_component
+
+  return path_component
+    .. modified_component
+    .. readonly_component
+    .. diagnostics_component
+    .. "%=%l:%c "
+end
+
+vim.opt.statusline = "%!v:lua.StatusLine()"
