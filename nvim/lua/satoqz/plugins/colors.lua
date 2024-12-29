@@ -15,7 +15,7 @@ return {
         highlights = {
           -- Completely invisible by default.
           MiniTrailspace = { bg = "${red}" },
-          -- Colors the entire foreground as well by default, this only undercurls it.
+          -- Colors the entire foreground by default, this only undercurls it.
           DiagnosticUnderlineError = { sp = "${red}", undercurl = true },
           DiagnosticUnderlineWarn = { sp = "${yellow}", undercurl = true },
           DiagnosticUnderlineInfo = { sp = "${blue}", undercurl = true },

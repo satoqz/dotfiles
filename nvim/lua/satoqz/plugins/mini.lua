@@ -14,7 +14,7 @@ return {
 
       require("mini.pairs").setup({
         mappings = {
-          -- Fixes Rust lifetimes such at &'a.
+          -- Fixes Rust lifetimes such as &'a.
           ["'"] = { neigh_pattern = "[^(%a|&)\\]." },
         },
       })
