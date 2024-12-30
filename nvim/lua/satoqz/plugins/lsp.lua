@@ -6,26 +6,34 @@ return {
       "saghen/blink.cmp",
     },
     config = function()
-      local lspconfig = require("lspconfig")
-      local blink = require("blink.cmp")
-
-      local servers = {
-        gopls = {},
-        lua_ls = {},
-        rust_analyzer = {},
-        terraformls = {},
-        ts_ls = {},
-        zls = {},
-      }
-
-      vim.g.zig_fmt_parse_errors = 0
-      vim.g.zig_fmt_autosave = 0
-
-      for server, config in pairs(servers) do
-        config.capabilities = blink.get_lsp_capabilities(config.capabilities)
-        lspconfig[server].setup(config)
+      local util = require("satoqz.util")
+      for _, server in ipairs({
+        "clangd",
+        "gopls",
+        "lua_ls",
+        "pyright",
+        "rust_analyzer",
+        "terraformls",
+        "zls",
+      }) do
+        util.setup_language_server(server)
       end
     end,
+  },
+
+  {
+    "stevearc/conform.nvim",
+    event = "BufWritePre",
+    command = "ConformInfo",
+    opts = {
+      default_format_opts = { lsp_format = "fallback" },
+      format_on_save = { timeout_ms = 1000 },
+      formatters_by_ft = {
+        go = { "goimports", "gofmt" },
+        lua = { "stylua" },
+        python = { "ruff_format" },
+      },
+    },
   },
 
   {
@@ -64,17 +72,6 @@ return {
           },
         },
       },
-    },
-  },
-
-  {
-    "stevearc/conform.nvim",
-    event = "BufWritePre",
-    command = "ConformInfo",
-    opts = {
-      default_format_opts = { lsp_format = "fallback" },
-      format_on_save = { timeout_ms = 1000 },
-      formatters_by_ft = { lua = { "stylua" } },
     },
   },
 }
