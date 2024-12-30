@@ -50,9 +50,15 @@ vim.api.nvim_create_autocmd("FileType", {
 function StatusLine()
   local bufnr = vim.fn.winbufnr(vim.g.statusline_winid)
 
-  local path_component = vim.bo[bufnr].buftype == ""
-      and vim.fn.fnamemodify(vim.fn.bufname(bufnr), ":~:.")
-    or "%f"
+  local path_component = "%f"
+  if vim.bo[bufnr].buftype == "" then
+    local buf_name = vim.api.nvim_buf_get_name(bufnr)
+    if buf_name == "" then
+      path_component = "[No Name]"
+    else
+      path_component = vim.fn.fnamemodify(buf_name, ":~:.")
+    end
+  end
 
   local modified_component = vim.bo[bufnr].modified and " [+]" or ""
   local readonly_component = vim.bo[bufnr].readonly and " [readonly]" or ""
