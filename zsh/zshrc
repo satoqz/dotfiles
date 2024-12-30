@@ -17,7 +17,7 @@ maybe_source() { [[ -f "$1" ]] && source "$1"; }
 if_installed() { command -v "$1" > /dev/null; }
 
 alias ls="ls --color -F -A"
-if_installed eza && alias ls="eza -F -A --icons"
+if_installed eza && alias ls="eza --icons -F -A"
 if_installed nvim && alias vim="nvim"
 if_installed kubectl && alias k="kubectl"
 if_installed kubecolor && alias kubectl="kubecolor" && compdef kubecolor=kubectl
