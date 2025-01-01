@@ -1,17 +1,5 @@
 export GOPATH="$HOME/.go"
 
-export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
-  --highlight-line \
-  --info=inline-right \
-  --ansi \
-  --layout=reverse \
-  --color=fg:#abb2bf,bg:#21252b,hl:#98c379 \
-  --color=fg+:#abb2bf,bg+:#282c34,hl+:#98c379 \
-  --color=info:#5c6370,prompt:#c678dd,pointer:#c678dd \
-  --color=marker:#c678dd,spinner:#5c6370,header:#abb2bf \
-  --color=gutter:#21252b \
-"
-
 if [[ -x "/opt/homebrew/bin/brew" ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi

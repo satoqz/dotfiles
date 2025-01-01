@@ -1,3 +1,5 @@
+theme = Kanagawa Dragon
+
 font-family = GeistMono NFM
 font-feature = -liga
 font-thicken = true
@@ -27,10 +29,3 @@ window-height = 1000
 macos-titlebar-style = native
 macos-titlebar-proxy-icon = hidden
 macos-option-as-alt = true
-
-theme = gruvbox-material
-cursor-color = d4be98
-selection-background = 3c3836
-selection-foreground = d4be98
-palette = 8=#504945
-palette = 0=#504945

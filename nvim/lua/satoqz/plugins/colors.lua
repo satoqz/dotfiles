@@ -7,33 +7,18 @@ return {
   },
 
   {
-    "sainnhe/gruvbox-material",
-    event = "VeryLazy",
+    "rebelot/kanagawa.nvim",
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme("gruvbox-material")
+      local kanagawa = require("kanagawa")
+      kanagawa.setup({
+        compile = true,
+        theme = "dragon",
+        background = { dark = "dragon", light = "lotus" },
+        colors = { theme = { all = { ui = { bg_gutter = "none" } } } },
+      })
+      kanagawa.load()
     end,
-  },
-
-  {
-    "sainnhe/sonokai",
-    event = "VeryLazy",
-  },
-
-  {
-    "Mofiqul/vscode.nvim",
-    event = "VeryLazy",
-  },
-
-  {
-    "folke/tokyonight.nvim",
-    event = "VeryLazy",
-  },
-
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    event = "VeryLazy",
   },
 }
