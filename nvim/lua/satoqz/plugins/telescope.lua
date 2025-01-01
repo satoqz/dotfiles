@@ -3,11 +3,15 @@ return {
     "nvim-telescope/telescope.nvim",
     event = "VimEnter",
     branch = "0.1.x",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    },
     config = function()
+      local telescope = require("telescope")
       local actions = require("telescope.actions")
 
-      require("telescope").setup({
+      telescope.setup({
         defaults = require("telescope.themes").get_ivy({
           file_ignore_patterns = { "%.git/", "%.venv/" },
           borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
@@ -17,6 +21,8 @@ return {
           },
         }),
       })
+
+      telescope.load_extension("fzf")
 
       local builtin = require("telescope.builtin")
       local utils = require("telescope.utils")
