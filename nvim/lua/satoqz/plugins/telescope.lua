@@ -7,21 +7,19 @@ return {
       "nvim-lua/plenary.nvim",
       { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     },
-    config = function()
+    opts = {
+      defaults = require("telescope.themes").get_ivy({
+        file_ignore_patterns = { "%.git/", "%.venv/" },
+        borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
+        layout_config = { height = 0.7 },
+        mappings = {
+          i = { ["<esc>"] = require("telescope.actions").close },
+        },
+      }),
+    },
+    config = function(_, opts)
       local telescope = require("telescope")
-      local actions = require("telescope.actions")
-
-      telescope.setup({
-        defaults = require("telescope.themes").get_ivy({
-          file_ignore_patterns = { "%.git/", "%.venv/" },
-          borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
-          layout_config = { height = 0.7 },
-          mappings = {
-            i = { ["<esc>"] = actions.close },
-          },
-        }),
-      })
-
+      telescope.setup(opts)
       telescope.load_extension("fzf")
 
       local builtin = require("telescope.builtin")

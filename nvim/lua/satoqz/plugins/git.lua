@@ -1,12 +1,12 @@
 return {
   {
     "lewis6991/gitsigns.nvim",
-    config = function()
+    opts = {
+      current_line_blame_opts = { delay = 50 },
+    },
+    config = function(_, opts)
       local gitsigns = require("gitsigns")
-
-      gitsigns.setup({
-        current_line_blame_opts = { delay = 50 },
-      })
+      gitsigns.setup(opts)
 
       vim.keymap.set("n", "<leader>tb", gitsigns.toggle_current_line_blame)
       vim.keymap.set("n", "<leader>td", gitsigns.toggle_deleted)
@@ -24,7 +24,7 @@ return {
   {
     "tpope/vim-fugitive",
     dependencies = { "tpope/vim-rhubarb" },
-    config = function()
+    init = function()
       vim.keymap.set("n", "<leader>gg", "<cmd>Git<CR>")
     end,
   },
