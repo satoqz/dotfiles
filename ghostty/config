@@ -1,32 +1,29 @@
-theme = Kanagawa Dragon
+theme = Adwaita Dark
+bold-is-bright = true
 
 font-family = GeistMono NFM
 font-feature = -liga
 font-thicken = true
 font-size = 18
 
-adjust-cell-width = -10%
-adjust-cell-height = +10%
-
 font-style-bold = false
 font-style-italic = false
 font-style-bold-italic = false
 
+adjust-cell-width = -10%
+adjust-cell-height = +10%
+
 cursor-style-blink = false
 shell-integration-features = no-cursor
-
-copy-on-select = true
-mouse-hide-while-typing = true
 
 confirm-close-surface = false
 unfocused-split-opacity = 1
 
-window-padding-color = extend
 window-padding-x = 6
 window-padding-y = 6
 
-window-width = 1000
-window-height = 1000
+window-width = 150
+window-height = 36
 
 macos-titlebar-style = native
 macos-titlebar-proxy-icon = hidden

@@ -18,7 +18,6 @@ if_installed() { command -v "$1" > /dev/null; }
 
 alias ls="ls --color -F -A"
 if_installed eza && alias ls="eza --icons -F -A"
-if_installed nvim && alias vim="nvim"
 if_installed kubectl && alias k="kubectl"
 if_installed kubecolor && alias kubectl="kubecolor" && compdef kubecolor=kubectl
 
