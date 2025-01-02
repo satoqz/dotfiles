@@ -4,7 +4,7 @@ bold-is-bright = true
 font-family = GeistMono NFM
 font-feature = -liga
 font-thicken = true
-font-size = 18
+font-size = 14
 
 font-style-bold = false
 font-style-italic = false

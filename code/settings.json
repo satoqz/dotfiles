@@ -2,11 +2,12 @@
   "[toml]": {
     "editor.formatOnSave": false
   },
+  "diffEditor.renderSideBySide": false,
   "editor.accessibilitySupport": "off",
   "editor.cursorBlinking": "solid",
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.fontFamily": "GeistMono Nerd Font",
-  "editor.fontSize": 16,
+  "editor.fontSize": 14,
   "editor.formatOnSave": true,
   "editor.guides.highlightActiveIndentation": false,
   "editor.guides.indentation": false,
@@ -31,7 +32,7 @@
     "EDITOR": "code --wait"
   },
   "terminal.integrated.fontFamily": "GeistMono Nerd Font Mono",
-  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontSize": 14,
   "terminal.integrated.macOptionIsMeta": true,
   "terminal.integrated.scrollback": 100000,
   "terminal.integrated.shellIntegration.decorationsEnabled": "never",
@@ -47,7 +48,6 @@
   "window.commandCenter": false,
   "window.newWindowDimensions": "inherit",
   "window.title": "${rootName}",
-  "window.zoomLevel": 1.5,
   "workbench.colorTheme": "Default Dark+",
   "workbench.layoutControl.enabled": false,
   "workbench.list.smoothScrolling": true,
