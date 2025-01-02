@@ -32,29 +32,4 @@ if_installed direnv && eval "$(direnv hook zsh)"
 
 unset maybe_source if_installed
 
-precmd() {
-    PROMPT="%(?.%F{green}.%F{red})➜ "
-    [[ -n "$SSH_CONNECTION" ]] && PROMPT+="%F{green}%m "
-    PROMPT+="%F{cyan}"
-
-    _repo_path="$(command -v git &> /dev/null \
-        && git rev-parse --show-toplevel 2> /dev/null)"
-
-    if [[ -n "$_repo_path" ]]; then
-        PROMPT+="$(basename "$_repo_path")"
-        [[ "$(pwd)" != "$_repo_path" ]] && PROMPT+="/${"$(pwd)"#$_repo_path/}"
-
-        [[ -n "$(git status --porcelain)" ]] && _dirty="×"
-        _branch="$(git branch --show-current)"
-        [[ -z "$_branch" ]] && _branch="$(git rev-parse --short HEAD)"
-        PROMPT+=" %F{magenta}git:(%F{red}$_branch%F{yellow}$_dirty%F{magenta}) "
-
-        unset _repo_path _dirty _branch
-    else
-        PROMPT+="%~ "
-    fi
-
-    PROMPT+="%f"
-}
-
-precmd
+PROMPT="%(?.%F{green}.%F{red})➜ %F{cyan}%1~%f "
