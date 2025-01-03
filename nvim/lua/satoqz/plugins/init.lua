@@ -16,11 +16,21 @@ return {
 
   {
     "stevearc/dressing.nvim",
-    opts = {},
+    config = true,
   },
 
   {
     "laytan/cloak.nvim",
     config = true,
+  },
+
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme("catppuccin")
+    end,
   },
 }
