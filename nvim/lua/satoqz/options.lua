@@ -4,7 +4,6 @@ vim.opt.termguicolors = true
 vim.opt.number = true
 vim.opt.signcolumn = "yes"
 vim.opt.scrolloff = 8
-vim.opt.wrap = false
 vim.opt.linebreak = true
 vim.opt.breakindent = true
 vim.opt.tabstop = 4
