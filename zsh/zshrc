@@ -31,4 +31,4 @@ if_installed direnv && eval "$(direnv hook zsh)"
 
 unset maybe_source if_installed
 
-PROMPT="%(?.%F{green}.%F{red})➜ %F{cyan}%1~%f "
+PROMPT="%F{cyan}%3~ %F{green}➜%f "
