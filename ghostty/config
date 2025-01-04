@@ -1,8 +1,8 @@
-theme = catppuccin-mocha
+theme = gruvbox-material
 font-family = GeistMono NFM
 font-feature = -liga
 font-thicken = true
-font-size = 18
+font-size = 16
 adjust-cell-width = -10%
 adjust-cell-height = +10%
 font-style-bold = false
