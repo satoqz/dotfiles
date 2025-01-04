@@ -1,11 +1,10 @@
 [core.files]
+fish = "~/.config/fish"
 ghostty = "~/.config/ghostty"
 git = "~/.config/git"
 nvim = "~/.config/nvim"
 tmux = "~/.config/tmux"
 "vim/vimrc" = "~/.vimrc"
-"zsh/zprofile" = "~/.zprofile"
-"zsh/zshrc" = "~/.zshrc"
 
 [darwin.files]
 "extra/hushlogin" = "~/.hushlogin"

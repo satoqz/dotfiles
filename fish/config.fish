@@ -1,0 +1,18 @@
+set -gx GOPATH ~/.go
+
+if test -x /opt/homebrew/bin/brew
+    /opt/homebrew/bin/brew shellenv | source
+end
+
+fish_add_path ~/.go/bin
+fish_add_path ~/.cargo/bin
+fish_add_path ~/.local/bin
+
+if status is-interactive
+    command -v nvim >/dev/null; and set -gx EDITOR nvim; and alias vim=nvim
+    command -v eza >/dev/null; and alias ls="eza -F -A"
+    command -v kubectl >/dev/null; and alias k=kubectl
+    command -v kubecolor >/dev/null; and alias k=kubecolor
+    command -v direnv >/dev/null; and direnv hook fish | source
+    set -U fish_greeting
+end
