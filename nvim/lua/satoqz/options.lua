@@ -26,12 +26,6 @@ vim.opt.exrc = true
 vim.lsp.inlay_hint.enable(true)
 vim.diagnostic.config({ signs = false })
 
-vim.api.nvim_create_autocmd("TextYankPost", {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-})
-
 vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, {
   pattern = "*",
   callback = function()
