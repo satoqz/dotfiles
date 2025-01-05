@@ -10,17 +10,31 @@ local function statusline_colorize(fg, suffix, component)
   return "%#" .. highlight_name .. "#" .. component .. "%*"
 end
 
+local function format_path(path)
+  return vim.fn.fnamemodify(path, ":~:.")
+end
+
 local function path_component(bufnr)
-  if vim.bo[bufnr].buftype == "" then
-    local buf_name = vim.api.nvim_buf_get_name(bufnr)
-    if buf_name == "" then
-      return "[No Name]"
-    else
-      return vim.fn.fnamemodify(buf_name, ":~:.")
-    end
-  else
-    return "%f"
+  local bufname = vim.api.nvim_buf_get_name(bufnr)
+
+  if bufname == "" then
+    return "[No Name]"
   end
+
+  if vim.startswith(bufname, "fugitive://") then
+    return "fugitive: "
+      .. vim.fn.fnamemodify(bufname:gsub("^fugitive://", ""):gsub("//$", ""), ":~")
+  end
+
+  if vim.startswith(bufname, "oil://") then
+    return vim.fn.fnamemodify(bufname:gsub("^oil://", ""):gsub("/$", ""), ":~")
+  end
+
+  if vim.bo[bufnr].buftype == "" then
+    return format_path(bufname)
+  end
+
+  return "%f"
 end
 
 local severity_to_highlight_suffix = {
