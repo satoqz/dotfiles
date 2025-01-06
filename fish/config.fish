@@ -15,6 +15,9 @@ if status is-interactive
     command -v kubecolor >/dev/null; and alias k=kubecolor
     command -v direnv >/dev/null; and direnv hook fish | source
 
-    set -U fish_greeting
     fish_vi_key_bindings
+    bind --mode insert \cr history-pager
+    bind --mode insert \cf fzy_cd_git_repos
+
+    set -U fish_greeting
 end
