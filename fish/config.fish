@@ -14,5 +14,7 @@ if status is-interactive
     command -v kubectl >/dev/null; and alias k=kubectl
     command -v kubecolor >/dev/null; and alias k=kubecolor
     command -v direnv >/dev/null; and direnv hook fish | source
+
     set -U fish_greeting
+    fish_vi_key_bindings
 end
