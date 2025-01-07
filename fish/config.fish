@@ -17,7 +17,6 @@ if status is-interactive
 
     fish_vi_key_bindings
     bind --mode insert \cr history-pager
-    bind --mode insert \cf fzy_cd_git_repos
 
     set -U fish_greeting
 end
