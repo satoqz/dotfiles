@@ -1,4 +1,12 @@
 function fzy_cd_git_repos
-    cd ~/src/(fd --base-directory ~/src --strip-cwd-prefix --type directory --hidden '\.git$' --exec dirname | sort | fzy)
+    set dir (fd \
+        --base-directory "$HOME/src" --strip-cwd-prefix \
+        --type directory --hidden '\.git$' --exec dirname \
+        | sort | fzy)
+
+    if test -n "$dir"
+        cd "$HOME/src/$dir"
+    end
+
     commandline -f repaint
 end
