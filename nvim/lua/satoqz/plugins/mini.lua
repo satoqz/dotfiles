@@ -17,7 +17,6 @@ return {
 
       local misc = require("mini.misc")
       misc.setup_restore_cursor()
-      misc.setup_termbg_sync()
     end,
   },
 }
