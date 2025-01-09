@@ -5,9 +5,9 @@ if status is-login
 
     set -gx GOPATH ~/.go
 
-    fish_add_path $GOPATH/bin
-    fish_add_path ~/.cargo/bin
-    fish_add_path ~/.local/bin
+    fish_add_path -m $GOPATH/bin
+    fish_add_path -m ~/.cargo/bin
+    fish_add_path -m ~/.local/bin
 end
 
 if status is-interactive
