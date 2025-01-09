@@ -18,7 +18,6 @@ vim.opt.undofile = true
 vim.opt.swapfile = false
 vim.opt.splitright = true
 vim.opt.splitbelow = true
-vim.opt.clipboard = "unnamedplus"
 vim.opt.statusline = "%!v:lua.require('satoqz.statusline').format()"
 vim.opt.autoread = true
 vim.opt.exrc = true
