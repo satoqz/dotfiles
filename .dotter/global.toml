@@ -2,8 +2,8 @@
 fish = "~/.config/fish"
 ghostty = "~/.config/ghostty"
 git = "~/.config/git"
-nvim = "~/.config/nvim"
 "vim/vimrc" = "~/.vimrc"
 
 [darwin.files]
+"code/settings.json" = "~/Library/Application Support/Code/User/settings.json"
 "extra/hushlogin" = "~/.hushlogin"
