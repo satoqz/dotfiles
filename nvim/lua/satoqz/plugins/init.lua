@@ -2,6 +2,11 @@ return {
   "tpope/vim-sleuth",
 
   {
+    "stevearc/dressing.nvim",
+    config = true,
+  },
+
+  {
     "stevearc/oil.nvim",
     opts = {
       view_options = { show_hidden = true },
@@ -12,16 +17,6 @@ return {
       oil.setup(opts)
       vim.keymap.set("n", "<leader>e", oil.open)
     end,
-  },
-
-  {
-    "stevearc/dressing.nvim",
-    config = true,
-  },
-
-  {
-    "laytan/cloak.nvim",
-    config = true,
   },
 
   {

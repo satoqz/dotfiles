@@ -3,8 +3,6 @@ fish = "~/.config/fish"
 ghostty = "~/.config/ghostty"
 git = "~/.config/git"
 nvim = "~/.config/nvim"
-tmux = "~/.config/tmux"
-tmux-sessionizer = "~/.config/tms"
 "vim/vimrc" = "~/.vimrc"
 
 [darwin.files]
