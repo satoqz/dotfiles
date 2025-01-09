@@ -12,3 +12,7 @@ function fish_prompt
 
     printf "\n➜ "
 end
+
+function fish_prompt_newline --on-event fish_postexec
+    echo
+end
