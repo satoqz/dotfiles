@@ -12,6 +12,7 @@ font-style-bold-italic = false
 
 adjust-cell-width = -10%
 adjust-cell-height = +10%
+adjust-cursor-thickness = +100%
 
 cursor-style-blink = false
 shell-integration-features = no-cursor
