@@ -20,7 +20,6 @@
   "editor.minimap.enabled": false,
   "editor.overviewRulerBorder": false,
   "editor.renderLineHighlight": "none",
-  "editor.scrollbar.vertical": "hidden",
   "editor.smoothScrolling": true,
   "editor.wordBasedSuggestions": "off",
   "errorLens.borderRadius": "0.5em",
