@@ -1,5 +1,5 @@
 {
-  "buffer_font_family": "Geist Mono",
+  "buffer_font_family": "Iosevka Nerd Font",
   "buffer_font_size": 16,
   "buffer_font_weight": 500,
   "collaboration_panel": {
@@ -29,7 +29,9 @@
   },
   "languages": {
     "Git Commit": {
-      "wrap_guides": [72]
+      "wrap_guides": [
+        72
+      ]
     }
   },
   "outline_panel": {
@@ -40,6 +42,7 @@
     "indent_guides": {
       "show": "never"
     },
+    "indent_size": 8,
     "scrollbar": {
       "show": "never"
     }
@@ -64,12 +67,12 @@
       "breadcrumbs": false
     }
   },
+  "theme": "Catppuccin Frappé - No Italics",
   "toolbar": {
     "breadcrumbs": false,
     "quick_actions": false,
     "selections_menu": false
   },
-  "ui_font_family": "Geist Mono",
   "ui_font_size": 16,
   "ui_font_weight": 500,
   "vim_mode": true
