@@ -29,9 +29,7 @@
   },
   "languages": {
     "Git Commit": {
-      "wrap_guides": [
-        72
-      ]
+      "wrap_guides": [72]
     }
   },
   "outline_panel": {
