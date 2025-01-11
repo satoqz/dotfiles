@@ -12,6 +12,7 @@ adjust-cursor-thickness = +100%
 cursor-style-blink = false
 shell-integration-features = no-cursor
 
+window-padding-color = extend
 window-padding-x = 6
 window-padding-y = 6
 window-width = 150

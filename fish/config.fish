@@ -8,6 +8,11 @@ if status is-login
     fish_add_path -m $GOPATH/bin
     fish_add_path -m ~/.cargo/bin
     fish_add_path -m ~/.local/bin
+
+    if not set -q EDITOR
+        command -q vim; and set -gx EDITOR vim
+        command -q nvim; and set -gx EDITOR nvim
+    end
 end
 
 if status is-interactive
@@ -19,8 +24,9 @@ if status is-interactive
     set fish_color_param white
     set fish_color_comment brblack
 
-    command -v eza >/dev/null; and alias ls="eza -F -A"
-    command -v kubectl >/dev/null; and alias k=kubectl
-    command -v kubecolor >/dev/null; and alias k=kubecolor
-    command -v direnv >/dev/null; and direnv hook fish | source
+    command -q eza; and alias ls="eza -F -A"
+    command -q nvim; and alias vim=nvim
+    command -q kubectl; and alias k=kubectl
+    command -q kubecolor; and alias k=kubecolor
+    command -q direnv; and direnv hook fish | source
 end
