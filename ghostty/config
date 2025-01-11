@@ -1,8 +1,6 @@
-theme = Dark+
-bold-is-bright = true
+theme = catppuccin-frappe
 
-font-family = GeistMono NFM
-font-feature = -liga
+font-family = Iosevka NFM
 font-thicken = true
 font-size = 18
 
@@ -10,10 +8,7 @@ font-style-bold = false
 font-style-italic = false
 font-style-bold-italic = false
 
-adjust-cell-width = -10%
-adjust-cell-height = +10%
 adjust-cursor-thickness = +100%
-
 cursor-style-blink = false
 shell-integration-features = no-cursor
 
