@@ -1,3 +1,11 @@
-.DS_Store
+# Environment variables
 .env*
 .direnv
+
+# Editor configuration
+.nvim.lua
+.vscode/settings.json
+.zed/settings.json
+
+# Nonsense
+.DS_Store
