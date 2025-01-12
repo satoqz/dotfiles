@@ -9,7 +9,6 @@ vim.opt.hlsearch = true
 vim.opt.ignorecase = true
 vim.opt.laststatus = 0
 vim.opt.linebreak = true
-vim.opt.mouse = ""
 vim.opt.number = true
 vim.opt.ruler = false
 vim.opt.scrolloff = 8
