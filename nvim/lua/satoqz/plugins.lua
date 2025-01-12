@@ -4,7 +4,6 @@ return {
   {
     "echasnovski/mini.nvim",
     config = function()
-      require("mini.trailspace").setup()
       require("mini.comment").setup({
         mappings = {
           comment_line = "<C-c>",
