@@ -5,11 +5,6 @@ local function path_component(bufnr)
     return "[No Name]"
   end
 
-  if vim.startswith(bufname, "fugitive://") then
-    return "fugitive: "
-      .. vim.fn.fnamemodify(bufname:gsub("^fugitive://", ""):gsub("//$", ""), ":~")
-  end
-
   if vim.startswith(bufname, "oil://") then
     return vim.fn.fnamemodify(bufname:gsub("^oil://", ""):gsub("/$", ""), ":~")
   end
