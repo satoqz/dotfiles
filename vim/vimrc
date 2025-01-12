@@ -1,6 +1,7 @@
 syntax on
 
-set number ruler
+set number
+set laststatus=0
 set scrolloff=8 nowrap
 set linebreak breakindent
 set tabstop=4 softtabstop=4 shiftwidth=4
@@ -11,9 +12,4 @@ set splitright splitbelow
 set clipboard=unnamedplus
 set autoread
 
-let g:netrw_banner=0
-
-nnoremap <Esc> <cmd>nohlsearch<CR>
-
-nnoremap gn <cmd>bnext<CR>
-nnoremap gp <cmd>bprev<CR>
+nnoremap <Esc> <cmd>nohlsearch<cr>
