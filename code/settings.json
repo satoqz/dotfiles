@@ -1,5 +1,7 @@
 {
   "breadcrumbs.enabled": false,
+  "catppuccin-icons.hidesExplorerArrows": true,
+  "catppuccin-icons.specificFolders": false,
   "catppuccin.accentColor": "blue",
   "catppuccin.extraBordersEnabled": true,
   "catppuccin.italicComments": false,
@@ -44,6 +46,7 @@
   "git.enableSmartCommit": true,
   "git.openRepositoryInParentFolders": "always",
   "git.rebaseWhenSync": true,
+  "git.replaceTagsWhenPull": true,
   "git.showCommitInput": false,
   "markdown.preview.fontFamily": "Iosevka Nerd Font",
   "markdown.preview.fontSize": 16,
@@ -68,8 +71,6 @@
   },
   "terminal.integrated.fontFamily": "Iosevka Nerd Font Mono",
   "terminal.integrated.fontSize": 16,
-  "catppuccin-icons.hidesExplorerArrows": true,
-  "catppuccin-icons.specificFolders": false,
   "terminal.integrated.macOptionIsMeta": true,
   "terminal.integrated.scrollback": 100000,
   "terminal.integrated.shellIntegration.decorationsEnabled": "never",
@@ -83,6 +84,7 @@
   "window.commandCenter": false,
   "window.newWindowDimensions": "inherit",
   "window.title": "${activeEditorMedium}",
+  "workbench.activityBar.location": "default",
   "workbench.colorCustomizations": {
     "[Catppuccin Frappé]": {
       "editorGroup.border": "#0000",
@@ -96,18 +98,16 @@
   "workbench.colorTheme": "Catppuccin Frappé",
   "workbench.editor.decorations.badges": false,
   "workbench.editor.empty.hint": "hidden",
+  "workbench.iconTheme": "catppuccin-frappe",
   "workbench.layoutControl.enabled": false,
   "workbench.list.smoothScrolling": true,
+  "workbench.productIconTheme": "feather-vscode",
   "workbench.reduceMotion": "on",
-  "workbench.activityBar.location": "default",
   "workbench.settings.editor": "json",
   "workbench.startupEditor": "none",
   "workbench.tree.enableStickyScroll": false,
   "workbench.tree.renderIndentGuides": "none",
-  "workbench.productIconTheme": "feather-vscode",
-  "workbench.iconTheme": "catppuccin-frappe",
-  "git.replaceTagsWhenPull": true,
   "zig.path": "zig",
-  "zig.zls.path": "zls",
-  "zig.zls.enabled": "on"
+  "zig.zls.enabled": "on",
+  "zig.zls.path": "zls"
 }
