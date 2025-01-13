@@ -7,7 +7,6 @@
   "catppuccin.italicComments": false,
   "catppuccin.italicKeywords": false,
   "catppuccin.workbenchMode": "flat",
-  "diffEditor.renderGutterMenu": false,
   "editor.accessibilitySupport": "off",
   "editor.codeLens": false,
   "editor.cursorBlinking": "solid",
