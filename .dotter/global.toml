@@ -3,6 +3,6 @@ fish = "~/.config/fish"
 ghostty = "~/.config/ghostty"
 git = "~/.config/git"
 
-[darwin]
+[darwin.files]
 code = "~/Library/Application Support/Code/User"
 "extra/hushlogin" = "~/.hushlogin"
