@@ -3,6 +3,7 @@
 .direnv
 
 # Editor configuration
+.helix
 .nvim.lua
 .vscode/settings.json
 .zed/settings.json

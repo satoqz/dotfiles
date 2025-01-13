@@ -2,6 +2,7 @@
 fish = "~/.config/fish"
 ghostty = "~/.config/ghostty"
 git = "~/.config/git"
+helix = "~/.config/helix"
 nvim = "~/.config/nvim"
 zed = "~/.config/zed"
 "vim/vimrc" = "~/.vimrc"

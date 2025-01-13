@@ -9,9 +9,8 @@ if status is-login
     fish_add_path -m ~/.cargo/bin
     fish_add_path -m ~/.local/bin
 
-    if not set -q EDITOR
-        command -q vim; and set -gx EDITOR vim
-        command -q nvim; and set -gx EDITOR nvim
+    if not set -q EDITOR && command -q hx
+        set -gx EDITOR hx
     end
 end
 
