@@ -1,30 +1,19 @@
-if status is-login
-    if test -x /opt/homebrew/bin/brew
-        /opt/homebrew/bin/brew shellenv | source
-    end
-
-    set -gx GOPATH ~/.go
-
-    fish_add_path -m $GOPATH/bin
-    fish_add_path -m ~/.cargo/bin
-    fish_add_path -m ~/.local/bin
-
-    if not set -q EDITOR
-        command -q vim; and set -gx EDITOR vim
-        command -q nvim; and set -gx EDITOR nvim
-    end
+if test -x /opt/homebrew/bin/brew
+    /opt/homebrew/bin/brew shellenv | source
 end
 
-if status is-interactive
-    set -U fish_greeting
+set -gx GOPATH ~/.go
 
-    fish_vi_key_bindings
-    bind --mode insert \cr history-pager
-    bind --mode insert \cg find_repo
+fish_add_path -m $GOPATH/bin
+fish_add_path -m ~/.cargo/bin
+fish_add_path -m ~/.local/bin
 
-    command -q eza; and alias ls="eza -F -A"
-    command -q nvim; and alias vim=nvim
-    command -q kubectl; and alias k=kubectl
-    command -q kubecolor; and alias k=kubecolor
-    command -q direnv; and direnv hook fish | source
-end
+fish_vi_key_bindings
+bind --mode insert \cr history-pager
+
+command -q eza; and alias ls="eza -F -A"
+command -q kubectl; and alias k=kubectl
+command -q kubecolor; and alias k=kubecolor
+command -q direnv; and direnv hook fish | source
+
+set -U fish_greeting
