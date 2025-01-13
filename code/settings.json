@@ -68,6 +68,8 @@
   },
   "terminal.integrated.fontFamily": "Iosevka Nerd Font Mono",
   "terminal.integrated.fontSize": 16,
+  "catppuccin-icons.hidesExplorerArrows": true,
+  "catppuccin-icons.specificFolders": false,
   "terminal.integrated.macOptionIsMeta": true,
   "terminal.integrated.scrollback": 100000,
   "terminal.integrated.shellIntegration.decorationsEnabled": "never",
@@ -81,7 +83,6 @@
   "window.commandCenter": false,
   "window.newWindowDimensions": "inherit",
   "window.title": "${activeEditorMedium}",
-  "workbench.activityBar.location": "hidden",
   "workbench.colorCustomizations": {
     "[Catppuccin Frappé]": {
       "editorGroup.border": "#0000",
@@ -98,9 +99,15 @@
   "workbench.layoutControl.enabled": false,
   "workbench.list.smoothScrolling": true,
   "workbench.reduceMotion": "on",
+  "workbench.activityBar.location": "default",
   "workbench.settings.editor": "json",
-  "workbench.sideBar.location": "left",
   "workbench.startupEditor": "none",
   "workbench.tree.enableStickyScroll": false,
-  "workbench.tree.renderIndentGuides": "none"
+  "workbench.tree.renderIndentGuides": "none",
+  "workbench.productIconTheme": "feather-vscode",
+  "workbench.iconTheme": "catppuccin-frappe",
+  "git.replaceTagsWhenPull": true,
+  "zig.path": "zig",
+  "zig.zls.path": "zls",
+  "zig.zls.enabled": "on"
 }
