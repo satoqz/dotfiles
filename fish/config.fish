@@ -15,13 +15,10 @@ if status is-login
 end
 
 if status is-interactive
-    fish_vi_key_bindings
-
     set -U fish_greeting
 
-    set fish_color_command green
-    set fish_color_param white
-    set fish_color_comment brblack
+    fish_vi_key_bindings
+    bind --mode insert \cr history-pager
 
     command -q eza; and alias ls="eza -F -A"
     command -q nvim; and alias vim=nvim
