@@ -1,9 +1,14 @@
+theme = catppuccin-frappe
+
+font-family = Iosevka Term
 font-thicken = true
 font-size = 18
 
-adjust-cell-width = -10%
-adjust-cursor-thickness = +100%
+font-style-bold = false
+font-style-italic = false
+font-style-bold-italic = false
 
+adjust-cursor-thickness = +100%
 cursor-style-blink = false
 shell-integration-features = no-cursor
 
