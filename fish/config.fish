@@ -19,6 +19,7 @@ if status is-interactive
 
     fish_vi_key_bindings
     bind --mode insert \cr history-pager
+    bind --mode insert \cg find_repo
 
     command -q eza; and alias ls="eza -F -A"
     command -q nvim; and alias vim=nvim
