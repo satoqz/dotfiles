@@ -3,7 +3,7 @@
 .direnv
 
 # Editor configuration
-.vscode/settings.json
+.helix
 
 # Nonsense
 .DS_Store

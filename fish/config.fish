@@ -8,8 +8,9 @@ fish_add_path -m $GOPATH/bin
 fish_add_path -m ~/.cargo/bin
 fish_add_path -m ~/.local/bin
 
-fish_vi_key_bindings
-bind --mode insert \cr history-pager
+if not set -q EDITOR && command -q hx
+    set -gx EDITOR hx
+end
 
 command -q eza; and alias ls="eza -F -A"
 command -q kubectl; and alias k=kubectl

@@ -3,6 +3,8 @@ set -g __fish_git_prompt_color_branch red
 set -g __fish_git_prompt_shorten_branch_len 16
 
 function fish_prompt
+    echo -en "\e[6 q" # Resets cursor to line cursor.
+
     test -n "$SSH_TTY"; and printf "%s$USER@$hostname%s " \
         (set_color cyan) (set_color normal)
 

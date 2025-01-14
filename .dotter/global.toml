@@ -2,7 +2,7 @@
 fish = "~/.config/fish"
 ghostty = "~/.config/ghostty"
 git = "~/.config/git"
+helix = "~/.config/helix"
 
 [darwin.files]
-code = "~/Library/Application Support/Code/User"
 "extra/hushlogin" = "~/.hushlogin"
