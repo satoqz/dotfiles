@@ -1,21 +1,10 @@
-theme = "catppuccin_frappe"
-
-[editor]
-continue-comments = false
-default-yank-register = "+"
-gutters = ["diff", "line-numbers", "spacer"]
+theme = "gruber-darker"
 
 [editor.file-picker]
 hidden = false
 
 [editor.cursor-shape]
 insert = "bar"
-
-[editor.lsp]
-display-messages = true
-
-[editor.soft-wrap]
-enable = true
 
 [keys.normal.space]
 "i" = [":toggle lsp.display-inlay-hints"]
