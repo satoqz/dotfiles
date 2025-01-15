@@ -24,8 +24,3 @@ unfocused-split-opacity = 1
 macos-titlebar-style = native
 macos-titlebar-proxy-icon = hidden
 macos-option-as-alt = true
-
-macos-icon = custom-style
-macos-icon-frame = plastic
-macos-icon-ghost-color = #e4e4e4
-macos-icon-screen-color = #181818
