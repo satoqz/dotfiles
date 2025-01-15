@@ -1,5 +1,8 @@
 theme = "gruber-darker"
 
+[editor]
+auto-info = false
+
 [editor.file-picker]
 hidden = false
 
