@@ -21,6 +21,8 @@ window-height = 42
 confirm-close-surface = false
 unfocused-split-opacity = 1
 
+mouse-hide-while-typing = true
+
 macos-titlebar-style = native
 macos-titlebar-proxy-icon = hidden
 macos-option-as-alt = true
