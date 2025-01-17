@@ -8,7 +8,7 @@ set -g __fish_git_prompt_showupstream informative
 function fish_prompt
     echo -en "\e[6 q" # Resets cursor to line cursor.
 
-    test -n "$SSH_TTY"; and printf "%s$USER@$hostname%s " \
+    test -n "$SSH_TTY" && printf "%s$USER@$hostname%s " \
         (set_color cyan) (set_color normal)
 
     printf "%s%s%s%s >> " \
