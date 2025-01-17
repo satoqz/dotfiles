@@ -4,9 +4,6 @@ function goto_repo
         --type directory --hidden '\.git$' --exec dirname \
         | sort | fzy)
 
-    if test -n "$dir"
-        cd "$HOME/src/$dir"
-    end
-
+    test -n "$dir" && cd "$HOME/src/$dir"
     commandline -f repaint
 end

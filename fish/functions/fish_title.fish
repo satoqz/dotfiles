@@ -1,4 +1,3 @@
 function fish_title
-    set -q argv[1] || set argv fish
-    echo $argv
+    set -q argv[1] && echo $argv || echo fish
 end
