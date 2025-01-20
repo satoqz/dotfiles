@@ -3,11 +3,11 @@ theme = "gruber-darker"
 [editor]
 auto-info = false
 
-[editor.file-picker]
-hidden = false
-
 [editor.cursor-shape]
 insert = "bar"
+
+[editor.file-picker]
+hidden = false
 
 [keys.normal.space]
 "i" = [":toggle lsp.display-inlay-hints"]
