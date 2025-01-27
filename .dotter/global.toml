@@ -1,7 +1,10 @@
 [core.files]
 fish = "~/.config/fish"
-ghostty = "~/.config/ghostty"
 git = "~/.config/git"
+
+[gui.files]
+ghostty = "~/.config/ghostty"
+zed = "~/.config/zed"
 
 [darwin.files]
 "extra/hushlogin" = "~/.hushlogin"
