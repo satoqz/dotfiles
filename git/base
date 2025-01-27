@@ -1,0 +1,23 @@
+[commit]
+    gpgsign = true
+    verbose = true
+
+[gpg]
+    format = ssh
+
+[init]
+    defaultBranch = main
+
+[push]
+    default = current
+    followTags = true
+
+[pull]
+    rebase = true
+
+[remote]
+    pushDefault = origin
+
+[user]
+    name = Jonas Köhnen
+    email = mail@satoqz.net
