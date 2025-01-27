@@ -16,6 +16,7 @@
   "indent_guides": { "enabled": false },
   "git": { "inline_blame": { "enabled": false } },
   "gutter": { "code_actions": false, "folds": false },
+  "inlay_hints": { "enabled": true, "show_parameter_hints": false },
   "collaboration_panel": { "button": false },
   "notification_panel": { "button": false },
 
