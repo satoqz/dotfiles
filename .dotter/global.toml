@@ -2,9 +2,6 @@
 fish = "~/.config/fish"
 ghostty = "~/.config/ghostty"
 git = "~/.config/git"
-helix = "~/.config/helix"
-tmux = "~/.config/tmux"
-tmux-sessionizer = "~/.config/tms"
 
 [darwin.files]
 "extra/hushlogin" = "~/.hushlogin"
