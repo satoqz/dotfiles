@@ -1,2 +1,2 @@
 inherits = "gruber-darker"
-"markup.raw" = { fg = "fg3" }
+"markup.raw" = { fg = "fg1" }
