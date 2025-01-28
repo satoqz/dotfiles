@@ -1,6 +1,8 @@
 [core.files]
 fish = "~/.config/fish"
 git = "~/.config/git"
+tmux = "~/.config/tmux"
+"vim/vimrc" = "~/.vimrc"
 
 [gui.files]
 ghostty = "~/.config/ghostty"
