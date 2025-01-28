@@ -18,7 +18,7 @@ if status is-interactive
     set -g fish_cursor_external block
     set -g fish_cursor_visual block
     set -g fish_vi_force_cursor
-    bind \cr history-pager
+    bind --mode insert \cr history-pager
 
     command -q direnv && direnv hook fish | source
     command -q eza && alias ls="eza -F -A"
