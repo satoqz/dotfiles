@@ -43,8 +43,6 @@
   "features": { "inline_completion_provider": "none" },
   "assistant": {
     "version": "2",
-    "button": false,
-    "enabled": false,
     "default_model": {
       "model": "claude-3-5-sonnet-latest",
       "provider": "zed.dev"
