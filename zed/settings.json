@@ -12,18 +12,13 @@
 
   "show_user_picture": false,
   "tab_bar": { "show_nav_history_buttons": false },
+  "toolbar": { "quick_actions": false },
   "scrollbar": { "show": "system" },
   "git": { "inline_blame": { "enabled": false } },
   "gutter": { "code_actions": false, "folds": false },
   "inlay_hints": { "enabled": true, "show_parameter_hints": false },
   "collaboration_panel": { "button": false },
   "notification_panel": { "button": false },
-
-  "toolbar": {
-    "breadcrumbs": false,
-    "quick_actions": false,
-    "selections_menu": false
-  },
 
   "project_panel": {
     "indent_guides": { "show": "never" },
