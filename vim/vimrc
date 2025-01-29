@@ -8,6 +8,7 @@ set expandtab autoindent
 set hlsearch smartcase ignorecase
 set splitright splitbelow
 set clipboard=unnamed
+set mouse=a
 set noswapfile
 set autoread
 
