@@ -4,7 +4,9 @@
     "bindings": {
       "space i": "editor::ToggleInlayHints",
       "space b": "editor::ToggleGitBlameInline",
-      "space B": "editor::ToggleGitBlame"
+      "space B": "editor::ToggleGitBlame",
+      "g n": "pane::ActivateNextItem",
+      "g p": "pane::ActivatePrevItem"
     }
   },
   {
