@@ -10,12 +10,16 @@
   "ui_font_size": 18,
   "cursor_blink": false,
 
+  "pane_split_direction_vertical": "right",
+  "pane_split_direction_horizontal": "down",
+
   "show_user_picture": false,
   "tab_bar": { "show_nav_history_buttons": false },
   "toolbar": { "quick_actions": false },
   "scrollbar": { "show": "system" },
   "git": { "inline_blame": { "enabled": false } },
   "gutter": { "code_actions": false, "folds": false },
+  "indent_guides": { "enabled": false },
   "inlay_hints": { "enabled": true, "show_parameter_hints": false },
   "collaboration_panel": { "button": false },
   "notification_panel": { "button": false },
