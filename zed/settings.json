@@ -4,7 +4,7 @@
   "theme": "Xcode High Contrast Darker",
 
   "buffer_font_family": "Iosevka",
-  "buffer_font_size": 18.0,
+  "buffer_font_size": 18,
   "buffer_line_height": { "custom": 1.5 },
   "ui_font_family": "Iosevka",
   "ui_font_size": 18,
@@ -22,7 +22,6 @@
   "scrollbar": { "show": "system" },
   "git": { "inline_blame": { "enabled": false } },
   "gutter": { "code_actions": false, "folds": false },
-  "indent_guides": { "enabled": false },
   "inlay_hints": { "enabled": true, "show_parameter_hints": false },
   "collaboration_panel": { "button": false },
   "notification_panel": { "button": false },
