@@ -3,7 +3,7 @@
 .direnv
 
 # Editor configuration
-.helix
+.zed
 
 # Nonsense
 .DS_Store
