@@ -5,16 +5,13 @@
 
   "buffer_font_family": "Iosevka",
   "buffer_font_size": 18,
-  "buffer_line_height": { "custom": 1.5 },
+  "buffer_line_height": { "custom": 1.4 },
   "ui_font_family": "Iosevka",
   "ui_font_size": 18,
   "cursor_blink": false,
 
   "pane_split_direction_vertical": "right",
   "pane_split_direction_horizontal": "down",
-
-  // "last_session" doesn't work fsr?
-  "restore_on_startup": "last_workspace",
 
   "show_user_picture": false,
   "tab_bar": { "show_nav_history_buttons": false },
