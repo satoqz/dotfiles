@@ -1,5 +1,6 @@
 syntax on
 
+set hidden
 set number
 set scrolloff=8 nowrap
 set linebreak breakindent
