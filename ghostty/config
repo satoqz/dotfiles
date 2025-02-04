@@ -1,4 +1,4 @@
-theme = MaterialDarker
+theme = gruber-darker
 
 font-family = Iosevka Term
 font-thicken = true
@@ -9,14 +9,12 @@ font-style-italic = false
 font-style-bold-italic = false
 
 adjust-cursor-thickness = +100%
-cursor-style-blink = false
 shell-integration-features = no-cursor
+cursor-style-blink = false
 
 window-padding-color = extend
 window-padding-x = 6
 window-padding-y = 6
-window-width = 148
-window-height = 42
 
 confirm-close-surface = false
 unfocused-split-opacity = 1
