@@ -4,10 +4,8 @@
   "theme": "Xcode High Contrast Darker",
 
   "buffer_font_family": "Iosevka",
-  "buffer_font_size": 18,
   "buffer_line_height": { "custom": 1.4 },
   "ui_font_family": "Iosevka",
-  "ui_font_size": 18,
   "cursor_blink": false,
 
   "pane_split_direction_vertical": "right",
@@ -25,7 +23,7 @@
 
   "project_panel": {
     "indent_guides": { "show": "never" },
-    "indent_size": 10,
+    "indent_size": 8,
     "show_diagnostics": "off"
   },
 
