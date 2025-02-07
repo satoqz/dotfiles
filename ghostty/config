@@ -12,11 +12,10 @@ adjust-cursor-thickness = +100%
 shell-integration-features = no-cursor
 cursor-style-blink = false
 
+window-save-state = always
 window-padding-color = extend
 window-padding-x = 6
 window-padding-y = 6
-window-width = 1000
-window-height = 1000
 
 confirm-close-surface = false
 unfocused-split-opacity = 1
