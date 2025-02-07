@@ -9,15 +9,12 @@
     defaultBranch = main
 
 [push]
-    autoSetupRemote = true
     default = current
+    autoSetupRemote = true
     followTags = true
 
 [pull]
     rebase = true
-
-[remote]
-    pushDefault = origin
 
 [user]
     name = Jonas Köhnen

@@ -51,7 +51,7 @@ end
 bind --mode insert \cr history-pager
 
 command -q direnv && direnv hook fish | source
-command -q eza && alias ls="eza -F -A --group-directories-first"
+command -q eza && alias ls="eza -F --group-directories-first"
 command -q fd && command -q fzy && bind --mode insert \cg goto_repo
 command -q kubectl && alias k=kubectl
 command -q kubecolor && alias k=kubecolor
