@@ -3,7 +3,8 @@
 .direnv
 
 # Editor configuration
-.zed
+.helix
+.nvim.lua
 
 # Nonsense
 .DS_Store
