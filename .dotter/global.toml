@@ -4,6 +4,7 @@ git = "~/.config/git"
 helix = "~/.config/helix"
 tms = "~/.config/tms"
 tmux = "~/.config/tmux"
+"vim/vimrc" = "~/.vimrc"
 
 [gui.files]
 ghostty = "~/.config/ghostty"

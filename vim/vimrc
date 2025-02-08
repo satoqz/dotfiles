@@ -1,0 +1,19 @@
+syntax on
+
+set hidden
+set number
+set laststatus=2
+set scrolloff=8 nowrap
+set linebreak breakindent
+set tabstop=4 softtabstop=4 shiftwidth=4
+set expandtab autoindent
+set hlsearch smartcase ignorecase
+set splitright splitbelow
+set clipboard=unnamed
+set noswapfile
+set autoread
+set mouse=a
+
+filetype plugin indent on
+
+nnoremap <Esc> <cmd>nohlsearch<cr>
