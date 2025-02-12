@@ -10,9 +10,6 @@ insert = "bar"
 [editor.file-picker]
 hidden = false
 
-[editor.soft-wrap]
-enable = true
-
 [keys.normal.space]
 "i" = [":toggle lsp.display-inlay-hints"]
 "." = ["file_picker_in_current_buffer_directory"]
