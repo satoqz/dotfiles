@@ -6,5 +6,5 @@ fish_add_path -m $GOPATH/bin
 fish_add_path -m ~/.cargo/bin
 fish_add_path -m ~/.local/bin
 
-command -q hx && set -gx EDITOR hx
+set -q EDITOR; or command -q hx && set -gx EDITOR hx
 command -q direnv && direnv hook fish | source

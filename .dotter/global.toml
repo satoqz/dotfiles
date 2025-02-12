@@ -5,6 +5,7 @@ helix = "~/.config/helix"
 tms = "~/.config/tms"
 tmux = "~/.config/tmux"
 "vim/vimrc" = "~/.vimrc"
+zed = "~/.config/zed"
 
 [gui.files]
 ghostty = "~/.config/ghostty"
