@@ -2,6 +2,7 @@ theme = "gruber-darker"
 
 [editor]
 auto-info = false
+default-yank-register = "+"
 
 [editor.cursor-shape]
 insert = "bar"
