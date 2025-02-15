@@ -61,7 +61,7 @@ return {
   {
     "stevearc/conform.nvim",
     event = "BufWritePre",
-    command = { "ConformInfo", "FormatDisable", "FormatEnable" },
+    cmd = { "ConformInfo", "FormatDisable", "FormatEnable" },
     config = function()
       require("conform").setup({
         formatters_by_ft = {
