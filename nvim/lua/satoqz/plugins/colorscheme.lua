@@ -14,10 +14,6 @@ local schemes = {
     end,
   },
   {
-    plugin = "folke/tokyonight.nvim",
-    name = "tokyonight",
-  },
-  {
     plugin = "catppuccin/nvim",
     name = "catppuccin",
   },
