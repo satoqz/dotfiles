@@ -1,10 +1,10 @@
 local function statusline_colorize(fg, suffix, component)
   local statusline_type = vim.api.nvim_get_current_win() == vim.g.statusline_winid and "" or "Nc"
-  local highlight_name = "Statusline" .. statusline_type .. suffix
+  local highlight_name = "StatusLine" .. statusline_type .. suffix
 
   vim.api.nvim_set_hl(0, highlight_name, {
     fg = fg,
-    bg = vim.api.nvim_get_hl(0, { name = "Statusline" .. statusline_type }).bg,
+    bg = vim.api.nvim_get_hl(0, { name = "StatusLine" .. statusline_type }).bg,
   })
 
   return "%#" .. highlight_name .. "#" .. component .. "%*"
