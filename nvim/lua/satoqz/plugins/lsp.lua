@@ -42,6 +42,15 @@ return {
       })
 
       local util = require("satoqz.util")
+
+      vim.api.nvim_create_user_command("LspSetup", function(opts)
+        util.setup_language_server(opts.args)
+        vim.cmd("LspStart " .. opts.args)
+      end, {
+        desc = "Set up language server",
+        nargs = 1,
+      })
+
       for _, server in ipairs({
         "clangd",
         "gopls",
@@ -77,8 +86,8 @@ return {
         end,
       })
 
-      vim.api.nvim_create_user_command("FormatDisable", function(args)
-        if args.bang then
+      vim.api.nvim_create_user_command("FormatDisable", function(opts)
+        if opts.bang then
           vim.b.disable_autoformat = true
         else
           vim.g.disable_autoformat = true
@@ -88,8 +97,8 @@ return {
         bang = true,
       })
 
-      vim.api.nvim_create_user_command("FormatEnable", function(args)
-        if args.bang then
+      vim.api.nvim_create_user_command("FormatEnable", function(opts)
+        if opts.bang then
           vim.b.disable_autoformat = false
         else
           vim.g.disable_autoformat = false
