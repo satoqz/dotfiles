@@ -43,14 +43,6 @@ return {
 
       local util = require("satoqz.util")
 
-      vim.api.nvim_create_user_command("LspSetup", function(opts)
-        util.setup_language_server(opts.args)
-        vim.cmd("LspStart " .. opts.args)
-      end, {
-        desc = "Set up language server",
-        nargs = 1,
-      })
-
       for _, server in ipairs({
         "clangd",
         "gopls",
