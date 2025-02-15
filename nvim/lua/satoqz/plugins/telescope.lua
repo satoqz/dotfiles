@@ -44,15 +44,19 @@ return {
       map("<leader>F", function()
         builtin.find_files({ hidden = true, cwd = utils.buffer_dir() })
       end, "[F]iles (buffer's directory)")
+
       map("<leader>b", function()
         builtin.buffers({ sort_mru = true })
       end, "[B]uffers")
+
+      map("<leader>th", function()
+        builtin.colorscheme({ enable_preview = true })
+      end, "[Th]eme")
 
       map("<leader>/", builtin.live_grep, "Live Grep")
       map("<leader>gs", builtin.git_status, "[G]it [S]tatus")
       map("<leader>gc", builtin.git_commits, "[G]it [C]ommits")
       map("<leader>gb", builtin.git_branches, "[G]it [B]ranches")
-      map("<leader>th", builtin.colorscheme, "[Th]eme")
       map("<leader>'", builtin.resume, "Resume")
     end,
   },
