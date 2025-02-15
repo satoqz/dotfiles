@@ -14,6 +14,10 @@ return {
       telescope.setup({
         defaults = {
           file_ignore_patterns = { "%.git/", "%.venv/" },
+          layout_config = { prompt_position = "top" },
+          sorting_strategy = "ascending",
+          prompt_prefix = " ",
+          selection_caret = "  ",
           mappings = {
             i = {
               ["<Esc>"] = actions.close,
