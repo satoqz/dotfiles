@@ -32,5 +32,6 @@ vim.opt.statusline = "%!v:lua.require('satoqz.statusline').format()"
 
 vim.g.mapleader = " "
 
+vim.keymap.set("n", "<leader>w", "<cmd>silent w<CR>", { desc = "Buffer: [W]rite" })
 vim.keymap.set("n", "gn", "<cmd>bnext<CR>", { desc = "Buffer: [G]oto [N]ext" })
 vim.keymap.set("n", "gp", "<cmd>bprev<CR>", { desc = "Buffer: [G]oto [P]revious" })
