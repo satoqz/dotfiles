@@ -33,6 +33,7 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
       vim.g.compile_mode = {}
+      vim.keymap.set("n", "<leader>c", "<cmd>Recompile<CR>", { desc = "Compile-Mode: Recompile" })
     end,
   },
 }
