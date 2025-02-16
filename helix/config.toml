@@ -10,6 +10,17 @@ insert = "bar"
 [editor.file-picker]
 hidden = false
 
+[editor.gutters]
+layout = ["diff", "line-numbers", "spacer"]
+
+[editor.indent-guides]
+render = true
+
+[keys.normal]
+"-" = "@\"_"
+
 [keys.normal.space]
-"i" = [":toggle lsp.display-inlay-hints"]
-"." = ["file_picker_in_current_buffer_directory"]
+"f" = "file_picker_in_current_directory"
+"F" = "file_picker_in_current_buffer_directory"
+"i" = ":toggle lsp.display-inlay-hints"
+"l" = ":reload-all"
