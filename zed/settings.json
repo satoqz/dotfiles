@@ -15,8 +15,8 @@
   "scrollbar": { "show": "never" },
   "git": { "inline_blame": { "enabled": false } },
   "gutter": { "code_actions": false, "folds": false },
-  "inlay_hints": { "enabled": true, "show_parameter_hints": false },
   "indent_guides": { "enabled": false },
+  "inlay_hints": { "enabled": true, "show_parameter_hints": false },
   "collaboration_panel": { "button": false },
   "notification_panel": { "button": false },
   "project_panel": {
@@ -32,7 +32,7 @@
     "option_as_meta": true,
     "toolbar": { "breadcrumbs": false }
   },
-  "features": { "inline_completion_provider": "none" },
+  "features": { "edit_prediction_provider": "none" },
   "assistant": {
     "version": "2",
     "default_model": {
@@ -43,6 +43,10 @@
   "ssh_connections": [
     { "host": "orb", "nickname": "OrbStack", "projects": [] }
   ],
-  "languages": { "Git Commit": { "wrap_guides": [50, 72] } },
+  "languages": {
+    "Git Commit": { "wrap_guides": [50, 72] },
+    "TypeScript": { "inlay_hints": { "enabled": false } },
+    "TSX": { "inlay_hints": { "enabled": false } }
+  },
   "telemetry": { "diagnostics": false, "metrics": false }
 }
