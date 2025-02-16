@@ -56,6 +56,7 @@ return {
       map("<leader>/", builtin.live_grep, "Live Grep")
       map("<leader>gs", builtin.git_status, "[G]it [S]tatus")
       map("<leader>gc", builtin.git_commits, "[G]it [C]ommits")
+      map("<leader>gh", builtin.git_bcommits, "[G]it File [H]istory")
       map("<leader>gb", builtin.git_branches, "[G]it [B]ranches")
       map("<leader>'", builtin.resume, "Resume")
     end,
