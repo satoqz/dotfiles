@@ -71,7 +71,7 @@ return {
       end
 
       map("<leader>tb", gitsigns.toggle_current_line_blame, "[T]oggle [B]lame")
-      map("<leader>td", gitsigns.preview_hunk_inline, "[T]oggle [D]iff")
+      map("<leader>hi", gitsigns.preview_hunk_inline, "Preview [H]unk [I]nline")
 
       map("]g", function()
         gitsigns.nav_hunk("next")
