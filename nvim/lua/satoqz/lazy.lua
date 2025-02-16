@@ -16,5 +16,5 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = "satoqz.plugins",
   change_detection = { notify = false },
-  install = { colorscheme = { vim.g.default_colorscheme } },
+  install = { colorscheme = { "gruvbox-material" } },
 })
