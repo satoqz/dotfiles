@@ -15,6 +15,7 @@
   "git": { "inline_blame": { "enabled": false } },
   "gutter": { "code_actions": false, "folds": false },
   "inlay_hints": { "enabled": true, "show_parameter_hints": false },
+  "auto_signature_help": true,
   "collaboration_panel": { "button": false },
   "notification_panel": { "button": false },
   "project_panel": {
