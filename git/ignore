@@ -5,6 +5,8 @@
 # Editor configuration
 .helix
 .nvim.lua
+.vscode
+.zed
 
 # Nonsense
 .DS_Store
