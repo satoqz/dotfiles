@@ -153,10 +153,7 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
-    dependencies = {
-      { "j-hui/fidget.nvim", config = true },
-      "saghen/blink.cmp",
-    },
+    dependencies = { { "j-hui/fidget.nvim", config = true } },
     config = function()
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("satoqz-lsp-attach", { clear = true }),

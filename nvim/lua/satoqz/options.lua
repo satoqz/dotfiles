@@ -13,7 +13,6 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.autoindent = true
 
-vim.opt.hlsearch = false
 vim.opt.smartcase = true
 vim.opt.ignorecase = true
 
@@ -33,3 +32,5 @@ vim.keymap.set("n", "gp", "<cmd>bprev<CR>", { desc = "Buffer: [G]oto [P]revious"
 
 vim.keymap.set({ "n", "v" }, "-", '"_')
 vim.keymap.set({ "n", "v" }, "+", '"+')
+
+vim.keymap.set("n", "<Esc>", ':let @/ = ""<CR>:nohlsearch<CR>', { silent = true })
