@@ -9,6 +9,7 @@ tmux = "~/.config/tmux"
 
 [gui.files]
 ghostty = "~/.config/ghostty"
+kitty = "~/.config/kitty"
 zed = "~/.config/zed"
 
 [darwin.files]
