@@ -13,9 +13,6 @@ hidden = false
 [editor.gutters]
 layout = ["diff", "line-numbers", "spacer"]
 
-[editor.indent-guides]
-render = true
-
 [keys.normal]
 "-" = "@\"_"
 
