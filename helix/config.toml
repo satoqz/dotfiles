@@ -2,7 +2,6 @@ theme = "gruber-darker"
 
 [editor]
 auto-info = false
-auto-pairs = false
 default-yank-register = "+"
 
 [editor.cursor-shape]
@@ -19,20 +18,14 @@ layout = ["diff", "line-numbers", "spacer"]
 "-" = "@\"_"
 "H" = "goto_first_nonwhitespace"
 "L" = "goto_line_end"
-"W" = "@miw"
-"E" = "@mim"
 
 [keys.normal]
 "-" = "@\"_"
 "H" = ["select_mode", "goto_first_nonwhitespace"]
 "L" = ["select_mode", "goto_line_end"]
-"W" = "@miw"
-"E" = "@mim"
 
 [keys.normal.space]
 "f" = "file_picker_in_current_directory"
 "F" = "file_picker_in_current_buffer_directory"
 "i" = ":toggle lsp.display-inlay-hints"
 "l" = ":reload-all"
-"w" = ":write"
-"x" = ":buffer-close"
