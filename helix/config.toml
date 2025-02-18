@@ -24,6 +24,9 @@ layout = ["diff", "line-numbers", "spacer"]
 "H" = ["select_mode", "goto_first_nonwhitespace"]
 "L" = ["select_mode", "goto_line_end"]
 
+[keys.normal.g]
+"C-w" = ["vsplit", "goto_definition"]
+
 [keys.normal.space]
 "f" = "file_picker_in_current_directory"
 "F" = "file_picker_in_current_buffer_directory"
