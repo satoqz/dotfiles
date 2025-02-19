@@ -7,7 +7,9 @@ fish_add_path -m ~/.cargo/bin
 fish_add_path -m ~/.local/bin
 
 if not set -q EDITOR then
+    command -q vim && set -gx EDITOR vim
     command -q hx && set -gx EDITOR hx
+    command -q nvim && set -gx EDITOR nvim
 end
 
 command -q direnv && direnv hook fish | source

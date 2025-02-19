@@ -104,7 +104,7 @@ return {
       telescope.setup({
         defaults = {
           file_ignore_patterns = { "%.git/", "%.venv/" },
-          layout_config = { prompt_position = "top" },
+          layout_config = { prompt_position = "top", height = 0.9, width = 0.9 },
           sorting_strategy = "ascending",
           prompt_prefix = " ",
           selection_caret = "  ",

@@ -1,4 +1,4 @@
-theme = gruber-darker
+theme = gruvbox-material
 
 font-family = Iosevka Term
 font-thicken = true

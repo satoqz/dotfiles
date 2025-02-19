@@ -13,6 +13,7 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.autoindent = true
 
+vim.opt.hlsearch = false
 vim.opt.smartcase = true
 vim.opt.ignorecase = true
 
@@ -33,4 +34,11 @@ vim.keymap.set("n", "gp", "<cmd>bprev<CR>", { desc = "Buffer: [G]oto [P]revious"
 vim.keymap.set({ "n", "v" }, "-", '"_')
 vim.keymap.set({ "n", "v" }, "+", '"+')
 
-vim.keymap.set("n", "<Esc>", ':let @/ = ""<CR>:nohlsearch<CR>', { silent = true })
+vim.keymap.set("n", "<Esc>", ':let @/ = ""<CR>', { silent = true })
+
+vim.api.nvim_create_autocmd("VimResized", {
+  group = vim.api.nvim_create_augroup("satoqz-balance-windows", { clear = true }),
+  callback = function()
+    vim.cmd.wincmd("=")
+  end,
+})
