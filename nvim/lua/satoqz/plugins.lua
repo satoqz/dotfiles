@@ -50,14 +50,6 @@ return {
     dependencies = { "nvim-treesitter/nvim-treesitter" },
   },
   {
-    "ej-shafran/compile-mode.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    config = function()
-      vim.g.compile_mode = {}
-      vim.keymap.set("n", "<leader>c", "<cmd>Recompile<CR>", { desc = "Compile-Mode: Recompile" })
-    end,
-  },
-  {
     "lewis6991/gitsigns.nvim",
     opts = {
       current_line_blame_opts = { delay = 50 },

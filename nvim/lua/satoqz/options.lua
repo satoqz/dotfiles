@@ -1,6 +1,7 @@
 vim.opt.scrolloff = 8
 vim.opt.number = true
 vim.opt.signcolumn = "yes"
+vim.opt.wrap = false
 
 vim.opt.splitright = true
 vim.opt.splitbelow = true
@@ -33,8 +34,6 @@ vim.keymap.set("n", "gp", "<cmd>bprev<CR>", { desc = "Buffer: [G]oto [P]revious"
 
 vim.keymap.set({ "n", "v" }, "-", '"_')
 vim.keymap.set({ "n", "v" }, "+", '"+')
-
-vim.keymap.set("n", "<Esc>", ':let @/ = ""<CR>', { silent = true })
 
 vim.api.nvim_create_autocmd("VimResized", {
   group = vim.api.nvim_create_augroup("satoqz-balance-windows", { clear = true }),
