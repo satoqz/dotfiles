@@ -1,4 +1,5 @@
 theme = gruber-darker
+palette = 0=#52494e
 
 font-family = Iosevka Term
 font-thicken = true
