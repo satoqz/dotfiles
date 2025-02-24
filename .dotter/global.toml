@@ -13,4 +13,5 @@ kitty = "~/.config/kitty"
 zed = "~/.config/zed"
 
 [darwin.files]
+code = "~/Library/Application Support/code/User"
 "extra/hushlogin" = "~/.hushlogin"
