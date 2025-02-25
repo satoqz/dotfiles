@@ -1,5 +1,4 @@
 {
-  "breadcrumbs.enabled": false,
   "editor.accessibilitySupport": "off",
   "editor.codeLens": false,
   "editor.cursorBlinking": "solid",
@@ -20,6 +19,7 @@
   "editor.overviewRulerBorder": false,
   "editor.renderLineHighlight": "none",
   "editor.smoothScrolling": true,
+  "editor.stickyScroll.enabled": false,
   "editor.wordBasedSuggestions": "off",
   "errorLens.borderRadius": "0.5em",
   "errorLens.fontSize": "12",
@@ -58,8 +58,6 @@
   "terminal.integrated.showExitAlert": false,
   "terminal.integrated.smoothScrolling": true,
   "terminal.integrated.tabs.enabled": false,
-  "vim.highlightedyank.enable": true,
-  "vim.useSystemClipboard": true,
   "window.commandCenter": false,
   "window.newWindowDimensions": "inherit",
   "window.title": "${activeEditorMedium}${separator}${rootName}",
@@ -71,5 +69,47 @@
   "workbench.settings.editor": "json",
   "workbench.startupEditor": "none",
   "workbench.tree.renderIndentGuides": "none",
-  "zig.zls.enabled": "on"
+  "zig.zls.enabled": "on",
+  "vim.camelCaseMotion.enable": true,
+  "vim.highlightedyank.enable": true,
+  "vim.leader": " ",
+  "vim.useSystemClipboard": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["[", "c"],
+      "commands": ["workbench.action.editor.previousChange"]
+    },
+    {
+      "before": ["]", "c"],
+      "commands": ["workbench.action.editor.nextChange"]
+    },
+    {
+      "before": ["[", "d"],
+      "commands": ["editor.action.marker.prev"]
+    },
+    {
+      "before": ["]", "d"],
+      "commands": ["editor.action.marker.next"]
+    },
+    {
+      "before": ["g", "a"],
+      "commands": ["workbench.action.gotoSymbol"]
+    },
+    {
+      "before": ["g", "A"],
+      "commands": ["workbench.action.showAllSymbols"]
+    },
+    {
+      "before": ["g", "r"],
+      "commands": ["editor.action.goToReferences"]
+    },
+    {
+      "before": ["c", "r", "n"],
+      "commands": ["editor.action.rename"]
+    },
+    {
+      "before": ["c", "r", "r"],
+      "commands": ["editor.action.quickFix"]
+    }
+  ]
 }
