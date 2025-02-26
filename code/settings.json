@@ -100,6 +100,10 @@
       "commands": ["workbench.action.showAllSymbols"]
     },
     {
+      "before": ["g", "y"],
+      "commands": ["editor.action.goToTypeDefinition"]
+    },
+    {
       "before": ["g", "r"],
       "commands": ["editor.action.goToReferences"]
     },
