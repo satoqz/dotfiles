@@ -6,7 +6,7 @@ fish_add_path -m $GOPATH/bin
 fish_add_path -m ~/.cargo/bin
 fish_add_path -m ~/.local/bin
 
-if not set -q EDITOR then
+if not set -q EDITOR
     command -q vim && set -gx EDITOR vim
     command -q hx && set -gx EDITOR hx
 end
