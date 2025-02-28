@@ -1,8 +1,10 @@
 {
+  "breadcrumbs.enabled": false,
   "editor.accessibilitySupport": "off",
   "editor.codeLens": false,
   "editor.cursorBlinking": "solid",
   "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorSurroundingLines": 8,
   "editor.folding": false,
   "editor.fontFamily": "Iosevka",
   "editor.fontLigatures": true,
@@ -19,7 +21,6 @@
   "editor.overviewRulerBorder": false,
   "editor.renderLineHighlight": "none",
   "editor.smoothScrolling": true,
-  "editor.stickyScroll.enabled": false,
   "editor.wordBasedSuggestions": "off",
   "errorLens.borderRadius": "0.5em",
   "errorLens.fontSize": "12",
