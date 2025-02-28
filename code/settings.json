@@ -1,5 +1,9 @@
 {
   "breadcrumbs.enabled": false,
+  "debug.console.fontFamily": "Iosevka Term",
+  "debug.console.fontSize": 16,
+  "debug.enableStatusBarColor": false,
+  "debug.toolBarLocation": "docked",
   "editor.accessibilitySupport": "off",
   "editor.codeLens": false,
   "editor.cursorBlinking": "solid",
