@@ -1,5 +1,4 @@
 {
-  "breadcrumbs.enabled": false,
   "debug.console.fontFamily": "Iosevka Term",
   "debug.console.fontSize": 16,
   "debug.enableStatusBarColor": false,
@@ -48,6 +47,7 @@
   "search.decorations.badges": false,
   "telemetry.telemetryLevel": "off",
   "terminal.external.osxExec": "Ghostty.app",
+  "terminal.integrated.allowChords": false,
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.cursorStyleInactive": "none",
   "terminal.integrated.cursorWidth": 2,
@@ -65,7 +65,7 @@
   "terminal.integrated.tabs.enabled": false,
   "window.commandCenter": false,
   "window.newWindowDimensions": "inherit",
-  "window.title": "${activeEditorMedium}${separator}${rootName}",
+  "window.title": "${rootName}",
   "workbench.colorTheme": "Default Dark+",
   "workbench.editor.empty.hint": "hidden",
   "workbench.layoutControl.enabled": false,
