@@ -6,9 +6,12 @@ fish_add_path -m $GOPATH/bin
 fish_add_path -m ~/.cargo/bin
 fish_add_path -m ~/.local/bin
 
+set editors vim hx nvim
+
 if not set -q EDITOR
-    command -q vim && set -gx EDITOR vim
-    command -q hx && set -gx EDITOR hx
+    for editor in $editors
+        command -q $editor && set -gx EDITOR $editor
+    end
 end
 
 command -q direnv && direnv hook fish | source
