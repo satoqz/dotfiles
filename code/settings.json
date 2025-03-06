@@ -1,4 +1,5 @@
 {
+  "chat.commandCenter.enabled": false,
   "debug.console.fontFamily": "Iosevka Term",
   "debug.console.fontSize": 16,
   "debug.enableStatusBarColor": false,
