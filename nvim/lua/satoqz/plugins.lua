@@ -10,6 +10,27 @@ return {
     },
   },
   {
+    "nvim-treesitter/nvim-treesitter-context",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    config = true,
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    event = "InsertEnter",
+    config = true,
+  },
+  {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    config = true,
+  },
+  {
+    "davidmh/mdx.nvim",
+    config = true,
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+  },
+  {
     "sainnhe/gruvbox-material",
     lazy = false,
     priority = 1000,
@@ -19,13 +40,7 @@ return {
     end,
   },
   {
-    "windwp/nvim-autopairs",
-    event = "InsertEnter",
-    config = true,
-  },
-  {
-    "windwp/nvim-ts-autotag",
-    event = "InsertEnter",
+    "stevearc/dressing.nvim",
     config = true,
   },
   {
@@ -41,19 +56,8 @@ return {
     end,
   },
   {
-    "stevearc/dressing.nvim",
-    config = true,
-  },
-  {
-    "davidmh/mdx.nvim",
-    config = true,
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-  },
-  {
     "lewis6991/gitsigns.nvim",
-    opts = {
-      current_line_blame_opts = { delay = 50 },
-    },
+    opts = { current_line_blame_opts = { delay = 50 } },
     config = function(_, opts)
       local gitsigns = require("gitsigns")
       gitsigns.setup(opts)
@@ -209,15 +213,7 @@ return {
       require("conform").setup({
         formatters_by_ft = {
           fish = { "fish_indent" },
-          go = { "goimports", "gofmt" },
           lua = { "stylua" },
-          python = { "ruff_format" },
-          javascript = { "prettier" },
-          javascriptreact = { "prettier" },
-          typescript = { "prettier" },
-          typescriptreact = { "prettier" },
-          html = { "prettier" },
-          css = { "prettier" },
         },
         format_on_save = function(bufnr)
           if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
