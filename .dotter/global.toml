@@ -1,17 +1,18 @@
-[core.files]
-fish = "~/.config/fish"
-git = "~/.config/git"
-helix = "~/.config/helix"
-nvim = "~/.config/nvim"
-tms = "~/.config/tms"
-tmux = "~/.config/tmux"
-"vim/vimrc" = "~/.vimrc"
+[term.files]
+"atuin"                  = "~/.config/atuin"
+"extra/hushlogin"        = "~/.hushlogin"
+"git"                    = "~/.config/git"
+"nvim"                   = "~/.config/nvim"
+"starship/starship.toml" = "~/.config/starship.toml"
+"tmux/tms.toml"          = "~/.config/tms/config.toml"
+"tmux/tmux.conf"         = "~/.config/tmux/tmux.conf"
+"vim/vimrc"              = "~/.vimrc"
+"zsh/zprofile"           = "~/.zprofile"
+"zsh/zshrc"              = "~/.zshrc"
 
 [gui.files]
-ghostty = "~/.config/ghostty"
-kitty = "~/.config/kitty"
-zed = "~/.config/zed"
+"ghostty" = "~/.config/ghostty"
+"kitty"   = "~/.config/kitty"
 
-[darwin.files]
+[soy.files]
 code = "~/Library/Application Support/code/User"
-"extra/hushlogin" = "~/.hushlogin"

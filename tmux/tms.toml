@@ -1,3 +1,3 @@
 [[search_dirs]]
-path = "~/src"
 depth = 4
+path  = "~/src"

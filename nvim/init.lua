@@ -1,1 +1,1 @@
-require("satoqz")
+require("config")

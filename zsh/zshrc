@@ -1,0 +1,54 @@
+setopt vi
+KEYTIMEOUT=1
+
+unset HISTFILE
+
+zstyle ':completion:' rehash true
+zstyle ':completion:*:default' menu select=1
+
+fpath+=(/opt/homebrew/share/zsh/site-functions)
+autoload -Uz compinit && compinit
+
+maybe_source() { [[ -f "$1" ]] && source "$1"; }
+if_installed() { command -v "$1" > /dev/null; }
+
+alias ls='ls --color -F -A'
+if_installed eza && alias ls='eza -F -A --group-directories-first'
+if_installed nvim && alias vim=nvim
+if_installed kubectl && alias k=kubectl
+if_installed kubecolor && alias kubectl=kubecolor && compdef kubecolor=kubectl
+
+maybe_source /opt/homebrew/share/zsh-autopair/autopair.zsh
+maybe_source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+maybe_source /opt/homebrew/share/zsh-system-clipboard/zsh-system-clipboard.zsh
+maybe_source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+if_installed atuin && eval "$(atuin init zsh --disable-up-arrow)"
+if_installed direnv && eval "$(direnv hook zsh)"
+if_installed starship && eval "$(starship init zsh)"
+
+unset maybe_source if_installed
+
+zle-keymap-select() {
+    case $KEYMAP in
+        vicmd) echo -ne "\e[2 q" ;;
+        *) echo -ne "\e[6 q" ;;
+    esac
+}
+
+zle -N zle-keymap-select
+precmd_functions+=(zle-keymap-select)
+
+_goto_repo() {
+    local dir=$(fd \
+        --base-directory "$HOME/src" --strip-cwd-prefix \
+        --type directory --hidden '\.git$' --exec dirname \
+        | sort | fzy)
+    test -n "$dir" && test -d "$HOME/src/$dir" && cd "$HOME/src/$dir"
+    zle reset-prompt
+}
+
+zle -N _goto_repo
+bindkey '^G' _goto_repo
+
+# vim: set ft=zsh
