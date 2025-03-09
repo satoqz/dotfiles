@@ -8,10 +8,8 @@ return {
       },
       notifier = {
         enabled = true,
-        filter = function(n) return n.msg ~= "cargo check" end,
       },
       picker = {
-        ui_select = false,
         layout = {
           layout = {
             width = 0.9,

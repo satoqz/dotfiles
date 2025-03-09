@@ -20,7 +20,7 @@ M.setup_language_server = function(server_name, settings, config, verbose)
   if not vim.tbl_contains(M.language_servers, server_name) then
     if verbose then
       vim.notify(
-        "Can't set up language server!\n`" .. server_name .. "` is not a valid language server.",
+        "Can't set up language server: `" .. server_name .. "` is not a valid language server.",
         vim.log.levels.ERROR
       )
     end
@@ -34,7 +34,7 @@ M.setup_language_server = function(server_name, settings, config, verbose)
   if vim.fn.executable(executable) == 0 then
     if verbose then
       vim.notify(
-        "Can't set up language server!\n`" .. executable .. "` is not executable.",
+        "Can't set up language server: `" .. executable .. "` is not executable.",
         vim.log.levels.ERROR
       )
     end

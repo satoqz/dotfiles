@@ -1,4 +1,4 @@
-local base = "<cmd>silent Git commit --quiet"
+local base = "<cmd>Git commit --quiet"
 local signoff = vim.g.signoff and " --signoff" or ""
 local opts = { silent = true, noremap = true, buffer = 0 }
 
