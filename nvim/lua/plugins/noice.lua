@@ -14,9 +14,6 @@ return {
           help = false,
         },
       },
-      messages = {
-        -- view_search = "mini",
-      },
       lsp = {
         progress = { enabled = false },
         signature = { enabled = false },
