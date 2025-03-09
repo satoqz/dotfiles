@@ -27,10 +27,18 @@ return {
           filter = {
             event = "msg_show",
             any = {
+              -- :w
               { find = "written$" },
+              -- Search
               { find = "^E486" },
               { find = "^/" },
               { find = "^?" },
+              -- Yank
+              { find = "^%d+ lines yanked$" },
+              -- Paste, undo, redo
+              { find = "^%d+ more lines" },
+              { find = "^%d+ fewer lines" },
+              { find = "^%d+ change;" },
             },
           },
           opts = { skip = true },
