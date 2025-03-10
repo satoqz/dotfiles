@@ -25,5 +25,3 @@ vim.opt.tabstop = 4
 vim.opt.termguicolors = true
 vim.opt.undofile = true
 vim.opt.wrap = false
-
-vim.diagnostic.config({ signs = false })

@@ -7,9 +7,7 @@ return {
       delay = 50,
     },
     on_attach = function(buffer)
-      local function map(keys, func, mode)
-        vim.keymap.set(mode or "n", keys, func, { buffer = buffer })
-      end
+      local function map(keys, func, mode) vim.keymap.set(mode or "n", keys, func, { buffer = buffer }) end
 
       local gitsigns = require("gitsigns")
 

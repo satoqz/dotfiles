@@ -33,10 +33,7 @@ M.setup_language_server = function(server_name, settings, config, verbose)
   local executable = (config.cmd or default_config.cmd)[1]
   if vim.fn.executable(executable) == 0 then
     if verbose then
-      vim.notify(
-        "Can't set up language server: `" .. executable .. "` is not executable.",
-        vim.log.levels.ERROR
-      )
+      vim.notify("Can't set up language server: `" .. executable .. "` is not executable.", vim.log.levels.ERROR)
     end
     return
   end

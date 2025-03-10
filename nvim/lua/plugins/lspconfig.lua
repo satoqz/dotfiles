@@ -3,40 +3,13 @@ return {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     cmd = { "LspInfo", "LspStart", "LspStop", "LspRestart", "LspLog", "LspSetup" },
+    keys = {
+      { "crn", vim.lsp.buf.rename },
+      { "crr", vim.lsp.buf.code_action },
+      { "<leader>ti", function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end },
+    },
     config = function()
-      vim.api.nvim_create_autocmd("LspAttach", {
-        group = vim.api.nvim_create_augroup("satoqz-lsp-attach", { clear = true }),
-        callback = function(event)
-          local map = function(keys, func, mode)
-            vim.keymap.set(mode or "n", keys, func, { buffer = event.buf })
-          end
-
-          map("gd", Snacks.picker.lsp_definitions)
-          map("gD", Snacks.picker.lsp_declarations)
-          map("gy", Snacks.picker.lsp_type_definitions)
-          map("gi", Snacks.picker.lsp_implementations)
-          map("gr", Snacks.picker.lsp_references)
-
-          map("crn", vim.lsp.buf.rename)
-          map("crr", vim.lsp.buf.code_action)
-
-          map("<leader>s", Snacks.picker.lsp_symbols)
-          map("<leader>S", Snacks.picker.lsp_workspace_symbols)
-
-          map("<leader>p", Snacks.picker.diagnostics_buffer)
-          map("<leader>P", Snacks.picker.diagnostics)
-
-          local client = vim.lsp.get_client_by_id(event.data.client_id)
-          if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
-            map(
-              "<leader>ti",
-              function()
-                vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
-              end
-            )
-          end
-        end,
-      })
+      vim.diagnostic.config({ signs = false })
 
       vim.api.nvim_create_autocmd("LspProgress", {
         group = vim.api.nvim_create_augroup("satoqz-lsp-progress", { clear = true }),
