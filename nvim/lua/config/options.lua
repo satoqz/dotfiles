@@ -7,7 +7,6 @@ vim.opt.expandtab = true
 vim.opt.exrc = true
 vim.opt.hlsearch = false
 vim.opt.ignorecase = true
-vim.opt.laststatus = 3
 vim.opt.linebreak = true
 vim.opt.mouse = "a"
 vim.opt.number = true

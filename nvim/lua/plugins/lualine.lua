@@ -4,6 +4,7 @@ return {
     lazy = false,
     config = function()
       local theme = require("lualine.themes.gruvbox-material")
+      theme.inactive = theme.normal
       for _, mode_colors in pairs(theme) do
         mode_colors.a.bg = theme.normal.a.bg
       end
@@ -50,7 +51,7 @@ return {
       }
 
       local sections = {
-        lualine_a = { { "mode" } },
+        lualine_a = { "mode" },
         lualine_b = { filename },
         lualine_c = { diagnostics, recording },
         lualine_x = { encoding, fileformat },
@@ -58,10 +59,19 @@ return {
         lualine_z = { "location" },
       }
 
+      local inactive_sections = {
+        lualine_a = { "mode" },
+        lualine_b = { filename },
+        lualine_c = { diagnostics },
+        lualine_x = { encoding, fileformat },
+        lualine_y = { "progress" },
+        lualine_z = { "location" },
+      }
+
       require("lualine").setup({
         sections = sections,
+        inactive_sections = inactive_sections,
         options = {
-          globalstatus = true,
           theme = theme,
         },
       })
