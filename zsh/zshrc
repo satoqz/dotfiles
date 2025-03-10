@@ -19,7 +19,6 @@ if_installed kubectl && alias k=kubectl
 if_installed kubecolor && alias kubectl=kubecolor && compdef kubecolor=kubectl
 
 maybe_source /opt/homebrew/share/zsh-autopair/autopair.zsh
-maybe_source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 maybe_source /opt/homebrew/share/zsh-system-clipboard/zsh-system-clipboard.zsh
 maybe_source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
