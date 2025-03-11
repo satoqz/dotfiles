@@ -33,8 +33,8 @@ return {
               -- Yank
               { find = "^%d+ lines yanked$" },
               -- Paste, undo, redo
-              { find = "^%d+ more lines" },
-              { find = "^%d+ fewer lines" },
+              { find = "^%d+ more line" },
+              { find = "^%d+ fewer line" },
               { find = "^%d+ change;" },
             },
           },
