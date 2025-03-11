@@ -11,6 +11,7 @@ return {
       { "<leader>p", function() Snacks.picker.diagnostics_buffer() end },
       { "<leader>r", vim.lsp.buf.rename },
       { "<leader>s", function() Snacks.picker.lsp_symbols({}) end },
+      { "g<c-w>", function() Snacks.picker.lsp_definitions({ include_current = true, confirm = "edit_vsplit" }) end },
       { "gD", function() Snacks.picker.lsp_declarations({ include_current = true }) end },
       { "gd", function() Snacks.picker.lsp_definitions({ include_current = true }) end },
       { "gi", function() Snacks.picker.lsp_implementations({ include_current = true }) end },
