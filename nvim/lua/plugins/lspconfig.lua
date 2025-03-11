@@ -4,9 +4,18 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     cmd = { "LspInfo", "LspStart", "LspStop", "LspRestart", "LspLog", "LspSetup" },
     keys = {
-      { "crn", vim.lsp.buf.rename },
-      { "crr", vim.lsp.buf.code_action },
-      { "<leader>ti", function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end },
+      { "<leader>a", vim.lsp.buf.code_action },
+      { "<leader>i", function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end },
+      { "<leader>r", vim.lsp.buf.rename },
+      { "gA", function() Snacks.picker.lsp_workspace_symbols() end },
+      { "gD", function() Snacks.picker.lsp_declarations() end },
+      { "gP", function() Snacks.picker.diagnostics() end },
+      { "ga", function() Snacks.picker.lsp_symbols() end },
+      { "gd", function() Snacks.picker.lsp_definitions() end },
+      { "gi", function() Snacks.picker.lsp_implementations() end },
+      { "gp", function() Snacks.picker.diagnostics_buffer() end },
+      { "gr", function() Snacks.picker.lsp_references() end, nowait = true },
+      { "gy", function() Snacks.picker.lsp_type_definitions() end },
     },
     config = function()
       vim.diagnostic.config({ signs = false })
