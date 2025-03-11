@@ -52,7 +52,10 @@ return {
   {
     "nvim-treesitter/nvim-treesitter-context",
     event = "VeryLazy",
-    opts = { multiwindow = true },
+    opts = {
+      multiwindow = true,
+      multiline_threshold = 1,
+    },
     keys = {
       { "[c", function() require("treesitter-context").go_to_context(vim.v.count1) end },
     },
